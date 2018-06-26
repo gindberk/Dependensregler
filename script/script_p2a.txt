@@ -1,4 +1,4 @@
-# Passive to active Hej!
+# Passive to active
 
 {
     v feats "PRS|SFO" and $++ (av form "av" and deprel "AG" and > (pa deprel "PA")) and > (s deprel "SS" or deprel "OO" and postag "NN")
