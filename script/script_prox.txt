@@ -1,0 +1,19 @@
+# Proximization
+
+{
+    n lemma "man" and postag "PN" and $++ (pn form "sig" and postag "PN" and feats /obj/gi)
+    ::
+    set form n "du"; set form pn "dig";
+}
+
+{
+    n lemma "sin" and postag "PS" and $-- (pn lemma "man" and postag "PN")
+    ::
+    set form n "din"; set lemma n "din"; set form pn "du"; 
+}
+
+{
+    n lemma "man" and postag "PN"
+    ::
+    set form n "du";
+}

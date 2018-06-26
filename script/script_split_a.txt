@@ -1,0 +1,37 @@
+# Split-a
+
+{
+    k form "," and .-> (n postag "NN" and -->. (an deprel "AN"))# and not $+ (p postag "KN" or postag "HP" or postag "HA")
+    ::
+    add "är" after node k; set postag n "X"; copy group n after node k;
+}
+
+#{
+    #k form "," and -->. (a postag "_") and $++ (n postag "X" and not $++ (n2 postag "X"))# and $++ (k2 form ",") 
+    #::
+    #move node a after group n; split after node k;
+#}
+
+#{
+    #k form "," and $++ (k2 form ".") and $- (n postag "NN" and -->. (an deprel "AN"))# and not $+ (p postag "KN" or postag "HP" or postag "HA")
+    #::
+    #add "är" after node k; copy group n after node k;
+#}
+
+#{
+    #k form "," and $++ (k2 form ".") and $++ (n postag "NN" and not $-- k2) and -->. (a postag "_")
+    #::
+    #set form k "."; move node a after group n; split after node k and after node k2;
+#}
+
+#{
+    #k form "," and $+ (h2) and $++ (k2 form ",") and $++ (a postag "_")
+    #::
+    #set_head k2 headed_by h2; move node a after node h2;
+#}
+
+#{
+    #k form "," and $++ (k2 form ",") and $++ (a postag "_")
+    #::
+    #set form k2 "."; split after node k and after node k2; delete node k;
+#}

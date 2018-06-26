@@ -1,0 +1,7 @@
+# Straight word order
+
+{
+    ab postag "AB" and <-. (v postag "VB" and -->. (n deprel "SS" or feats /sub/gi)) and not $- (x)
+    ::
+    move node ab after node v; move group n before node ab;
+}

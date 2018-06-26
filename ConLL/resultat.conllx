@@ -1,0 +1,9 @@
+1	Studie	studie	UO	UO	_	4	SS	_	_
+2	efter	efter	PP	PP	_	1	ET	_	_
+3	studie	studie	NN	NN	UTR|SIN|IND|NOM	2	PA	_	_
+4	har	ha	VB	VB	PRS|AKT	0	ROOT	_	_
+5	visat	visa	VB	VB	SUP|AKT	4	VG	_	_
+6	att	att	SN	SN	_	5	ES	_	_
+7	träningseffekterna	träningseffekterna	NN	NN	UTR|PLU|IND|NOM	6	ROOT	_	_
+8	.	.	MAD	MAD	_	7	IP	_	_
+
