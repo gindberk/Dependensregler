@@ -22,32 +22,10 @@
     delete group hp;
 }
 ###############################################################################
-{
-    hp postag "HP" and $- (n postag "NN" and $- (d postag "DT" and $- (n2 postag "NN"))) and <--. (v postag "VB")
-    ::
-    split before node d and after group v;
-}
 
 {
-    hp postag "HP" and <--. (v postag "VB") and $- (n postag "NN") and not $-- (i deprel "IR" and $++ i2 deprel "JR")
-    ::
-    copy node n after node n;# copy node d after node n;#split before node hp and after group v;# after node n;
-}
+  hp postag "HP" and <--. (v postag "VB") and $- (n postag "NN" and $-(d postag "DT"))
+  ::
+  split before node d and after group v;
 
-{
-    hp postag "HP" and $- (n postag "NN" and $- (n2 postag "NN")) and <--. (v postag "VB")
-    ::
-    split before node n and after group v;
-}
-
-{
-    n is_top and $+ (p postag "MAD" ) and not $- (x)
-    ::
-    delete group n;
-}
-
-{
-    n is_top and $- (d postag "DT" and not $- (x)) and not $+ (y)
-    ::
-    delete group n;
 }
