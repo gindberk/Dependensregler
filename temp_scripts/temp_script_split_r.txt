@@ -1,15 +1,27 @@
+#A second split rule, which performs splitting for relative
+#clauses. The rule was triggered by a relative pronoun
+#(POS-tag HP) in a nominal phrase.
+
 {
     hp postag "HP" and <--. (v postag "VB") and $- (k form "," and $- (n postag "NN")) and not $-- (i deprel "IR" and $++ i2 deprel "JR")
     ::
     delete node k;# copy node d after node n;#split before node hp and after group v;# after node n;
 }
 
+#används på sjuksköterskeexemplet##############################################
 {
     hp postag "HP" and <--. (v postag "VB") and $- (n postag "NN" and .<-- (d postag "DT")) and not $-- (i deprel "IR" and $++ i2 deprel "JR")
     ::
     copy node n after node n; copy node d after node n;# copy node d after node n;#split before node hp and after group v;# after node n;
 }
 
+#används på medicinexemplet - tar bort den relativa satsen#####################
+{
+    hp postag "HP" and .-> (n postag "NN") and $- (n postag "NN" and $- (d postag "DT"))
+    ::
+    delete group hp;
+}
+###############################################################################
 {
     hp postag "HP" and $- (n postag "NN" and $- (d postag "DT" and $- (n2 postag "NN"))) and <--. (v postag "VB")
     ::

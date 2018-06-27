@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 1	Läromedel	läromedel	NN	NN	NEU|PLU|IND|NOM	9	SS	_	_
 2	i	i	PP	PP	_	1	ET	_	_
 3	matematik	matematik	NN	NN	UTR|SIN|IND|NOM	6	CJ	_	_
@@ -19,3 +20,23 @@
 4	mört	mört	NN	NN	UTR|SIN|IND|NOM	2	SP	_	_
 5	.	.	MAD	MAD	_	2	IP	_	_
 
+=======
+1	Vi	vi	PN	PN	UTR|PLU|DEF|SUB	2	SS	_	_
+2	har	ha	VB	VB	PRS|AKT	0	ROOT	_	_
+3	patientjournalerna	patientjournalerna	NN	NN	UTR|PLU|IND|NOM	2	OO	_	_
+4	från	från	PP	PP	_	2	TA	_	_
+5	Lasarettet	lasarett	NN	NN	NEU|SIN|DEF|NOM	4	PA	_	_
+6	i	i	PP	PP	_	5	ET	_	_
+7	Linköping	Linköping	PM	PM	NOM	6	PA	_	_
+8	sedan	sedan	AB	AB	_	9	CA	_	_
+9	1792	1792	RG	RG	NOM	7	ET	_	_
+10	i	i	PP	PP	_	9	RA	_	_
+11	obruten	obruten	JJ	JJ	POS|UTR|SIN|IND|NOM	12	AT	_	_
+12	följd	följd	NN	NN	UTR|SIN|IND|NOM	10	PA	_	_
+13	,	,	MID	MID	_	2	IK	_	_
+14	säger	säga	VB	VB	PRS|AKT	2	VG	_	_
+15	landstingsarkivarie	Landstingsarkivarie	PM	PM	NOM	14	OO	_	_
+16	Agneta	Agneta	PM	PM	NOM	15	ET	_	_
+17	Sundstrand	Sundstrand	PM	PM	NOM	16	HD	_	_
+18	.	.	MAD	MAD	_	2	IP	_	_
+>>>>>>> 3693397f4f67ae27ec03ae286a8848868439c896
