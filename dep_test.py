@@ -66,10 +66,11 @@ class Auto_Rules:
 
 
         if approve == "y" and not error_list:
-            with open ("ConLL/gold.conllx", "w") as goldfile:
+            with open ("ConLL/gold.conllx", "a") as goldfile:
         	       goldfile.write(new_simple)
-            with open ("ConLL/original.conllx", "w") as orgfile:
+            with open ("ConLL/original.conllx", "a) as orgfile:
         	       orgfile.write(new_original)
+                   orgfile.write("\n")
             self.save_rules()
 
 
