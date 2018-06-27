@@ -13,3 +13,9 @@
 13	svällpappersbilder	svällpappersbild	NN	NN	UTR|PLU|IND|NOM	12	OO	_	_
 14	.	.	MAD	MAD	_	12	IP	_	_
 
+1	Jag	jag	PN	PN	UTR|SIN|DEF|SUB	2	SS	_	_
+2	är	vara	VB	VB	PRS|AKT	0	ROOT	_	_
+3	en	en	DT	DT	UTR|SIN|IND	4	DT	_	_
+4	mört	mört	NN	NN	UTR|SIN|IND|NOM	2	SP	_	_
+5	.	.	MAD	MAD	_	2	IP	_	_
+
