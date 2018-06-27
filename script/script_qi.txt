@@ -1,5 +1,21 @@
 # Quotation Inversion
 
+{   v postag "VB" and $- (k form ",") and $+ (n postag "PM") and $-- (p form /.*[A-Ö].*/)
+    ::
+    move node n before node v; add "att" after node v; move group n before node p;
+}
+
+{   k form "," and $+ (x not form /\"/)
+    ::
+    delete node k;
+}
+
+#tar bort ordet ämnen
+{   g postag "VB" and $+ (a postag "AB" and <-.(o deprel "OO"))
+    ::
+    move node a before node g;
+}
+
 {
     start postag "PAD" and $++ (stop postag "PAD" and $+ (c deprel "IK" and $+ (v postag "VB" and -->. (a)))) and not $- (x)
     ::
