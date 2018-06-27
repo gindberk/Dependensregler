@@ -62,6 +62,7 @@ class Auto_Rules:
                 print(line)
 
         print(new_simple)
+        print(new_original)
         approve = raw_input('Godkanna nytt trad? (y/n): ')
 
 
@@ -69,7 +70,8 @@ class Auto_Rules:
             with open ("ConLL/gold.conllx", "a") as goldfile:
         	       goldfile.write(new_simple)
             with open ("ConLL/original.conllx", "a") as orgfile:
-        	       orgfile.write(new_original)
+                orgfile.write(new_original)
+                orgfile.write('\n')
             self.save_rules()
 
 
