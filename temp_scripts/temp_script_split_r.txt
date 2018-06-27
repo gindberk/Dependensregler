@@ -2,6 +2,13 @@
 #clauses. The rule was triggered by a relative pronoun
 #(POS-tag HP) in a nominal phrase.
 
+#Gör om en man som heter Ove - En man En man heter Ove. Skulle behöva få in en punkt samt göra om man-mannen
+{
+  hp postag "HP" and <--. (v postag "VB") and $- (n postag "NN" and .<-- (d postag "DT")) and not $-- (i deprel "IR" and $++ i2 deprel "JR")
+  ::
+  delete node hp; copy node n after node n; copy node d after node n;
+}
+
 {
     hp postag "HP" and <--. (v postag "VB") and $- (k form "," and $- (n postag "NN")) and not $-- (i deprel "IR" and $++ i2 deprel "JR")
     ::
@@ -22,6 +29,7 @@
     delete group hp;
 }
 ###############################################################################
+
 {
     hp postag "HP" and $- (n postag "NN" and $- (d postag "DT" and $- (n2 postag "NN"))) and <--. (v postag "VB")
     ::
