@@ -2,6 +2,7 @@ import copy
 import apply_rules
 import SAPIS
 import os
+from collections import Counter
 
 class Auto_Rules:
     """docstring for ."""
@@ -26,11 +27,10 @@ class Auto_Rules:
 
     def flatten_tree(self, deep_list):
         "Konvertera lista med trad till en stor strang"
-        flattened_list = []
+        flattened_list = ""
         for element in deep_list:
-            for value in element:
-                flattened_list.append(value)
-
+            for token in element:
+                flattened_list += token
         return flattened_list
 
     def compare_aprox(self, flat_result, flat_gold):
@@ -44,9 +44,8 @@ class Auto_Rules:
         "Jamfor rad for rad"
         errors = []
         for one, two in zip(list1, list2):
-            for o,t in zip(one, two):
-                if o != t:
-                    errors.append((o,t))
+            if not Counter(one) == Counter(two):
+                errors.append((one,two))
 
         return errors
 
@@ -68,7 +67,8 @@ class Auto_Rules:
 
         if approve == "y" and not error_list:
             with open ("ConLL/gold.conllx", "a") as goldfile:
-        	       goldfile.write(new_simple)
+                goldfile.write(new_simple)
+                goldfile.write('\n')
             with open ("ConLL/original.conllx", "a") as orgfile:
                 orgfile.write(new_original)
                 orgfile.write('\n')
@@ -112,14 +112,11 @@ class Auto_Rules:
         if (os.stat("ConLL/gold.conllx").st_size > 0 and
         os.stat("ConLL/original.conllx").st_size > 0):
             result = apply_rules.get_result(self.original, "original_result")
-            with open(self.gold) as g:
-                gold_standard = g.read()
+            with open(self.gold, "rb") as g:
+                gold_standard = g.read().decode("UTF-8")
             result_list = self.convert_conll(result)
             gold_list = self.convert_conll(gold_standard)
             original_list = self.convert_conll(self.original)
-            print(result_list)
-            print("---------------------")
-            print(gold_list)
 
             flat_result = copy.copy(result_list)
             flat_gold = copy.copy(gold_list)
@@ -132,8 +129,6 @@ class Auto_Rules:
         else:
             equals = True
 
-        #new_tree = get_conll(USER INPUT)
-        #new_tree = convert_conll(new_tree)
         new_tree = apply_rules.get_result(self.new, "input_result")
         self.new = self.load_new_original()
 
