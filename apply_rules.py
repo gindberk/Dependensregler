@@ -176,7 +176,7 @@ def _valid(text, empty_allowed=False):
     return True
 
 
-def get_result(conll):
+def get_result(conll, name):
     """Runs the functions, and creates a conll file with the results"""
     scripts = ["temp_scripts/temp_script_p2a.txt",
                "temp_scripts/temp_script_prox.txt",
@@ -189,6 +189,6 @@ def get_result(conll):
     for script in scripts:
         print(script)
         trees = create_new_trees(script, trees)
-    with open("ConLL/resultat.conllx", "w") as nyfil:
+    with open("ConLL/" + name + ".conllx", "w") as nyfil:
         nyfil.write(trees)
     return trees
