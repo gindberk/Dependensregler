@@ -1,14 +1,11 @@
 # Split-k
 
-{
-    k form "," and $+ (c postag "KN" or postag "SN") and $++ (v postag "VB") and $++ (k2 form "," and $-- (v))
+{ k form "," and $+ (c postag "KN" or postag "SN") and $++ (v postag "VB") and $++ (k2 form "," and $-- (v))
     ::
     set form k2 "."; split after node k and after node k2;# delete node k;
 }
 
-{
-    k form "," and $+ (c postag "KN" or postag "SN") and not $++ (k2 form ",") and $++ (v postag "VB")
+{   k form "," and $+ (c postag "KN" or postag "SN") and not $++ (k2 form ",") and $++ (v postag "VB")
     ::
     add "." after node c; split after node k; delete node k;
 }
-
