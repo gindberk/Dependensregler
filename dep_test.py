@@ -43,12 +43,26 @@ class Auto_Rules:
     def compare_prec(self, list1, list2):
         "Jamfor rad for rad"
         errors = []
+        one_list = []
+        two_list = []
+        temp_one = []
+        temp_two = []
         for one, two in zip(list1, list2):
-            if not Counter(one) == Counter(two):
-                errors.append((one,two))
+            if one == "" and two == "" and temp_one != temp_two:
+                one_list.append(temp_one)
+                temp_one = []
+                two_list.append(temp_two)
+                temp_two = []
+            temp_one.append(one)
+            temp_two.append(two)
+        for one, two in zip(one_list, two_list):
+            simple = ''.join(one)
+            orig = ''.join(two)
+            errors.append((one,two))
+        #for error in errors:
+
 
         return errors
-
 
     def user_input(self, error_list, new_simple, gold, original, new_original):
         "godkanna forenkling pa ny text, om godkand lagga in i guldstandard"
@@ -56,9 +70,14 @@ class Auto_Rules:
             print("Alla trad ar enligt guldstandard")
 
         else:
+            print("---------------------------------------------------")
             print("Dessa trad blir felaktiga:")
-            for line in error_list:
-                print(line)
+            print("---------------------------------------------------")
+            for error in error_list:
+                for line in error:
+                    for string in line:
+                        print(string)
+                print("---------------------------------------------------")
         self.print_seperation()
         print("Old tree:")
         print(new_original)
@@ -124,7 +143,6 @@ class Auto_Rules:
             result_list = self.convert_conll(result)
             gold_list = self.convert_conll(gold_standard)
             original_list = self.convert_conll(self.original)
-
             flat_result = copy.copy(result_list)
             flat_gold = copy.copy(gold_list)
 
