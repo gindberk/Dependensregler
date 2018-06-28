@@ -1,13 +1,11 @@
 # Quotation Inversion
-<<<<<<< HEAD
-
-=======
 #ändrar formen "x, förklarar Pelle" - pelle förklarar att x####################
 {   v postag "VB" and $- (k form ",") and $+ (n postag "PM" and $+ (s form ".")) and $-- (p form /.*[A-Ö].*/)
     ::
     move node n before node v; add "att" after node v; move group n before node p;
 }
-
+#ändrar formen x, säger pastor Klas Persson - Pastor Klas Persson säger att x ##
+#fungerar dock inte helt än då verbet inte hamnar på rätt plats#################
 {   v postag "VB" and $- (k form ",") and $+ (n postag "PM" and $+ (n2 postag "PM" and $+ n3 ) and $++ (s form ".")) and $-- (p form /.*[A-Ö].*/)
     ::
     move group n before node v; add "att" after node v;
@@ -29,7 +27,6 @@
     move node a before node g;
 }
 ##############################################################################
->>>>>>> 3693397f4f67ae27ec03ae286a8848868439c896
 {
     start postag "PAD" and $++ (stop postag "PAD" and $+ (c deprel "IK" and $+ (v postag "VB" and -->. (a)))) and not $- (x)
     ::

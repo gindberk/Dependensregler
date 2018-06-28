@@ -1,13 +1,12 @@
 # Split-a
 
-{
-    k form "," and .-> (n postag "NN" and -->. (an deprel "AN"))# and not $+ (p postag "KN" or postag "HP" or postag "HA")
+{   k form "," and .-> (n postag "NN" and -->. (an deprel "AN"))# and not $+ (p postag "KN" or postag "HP" or postag "HA")
     ::
     add "är" after node k; set postag n "X"; copy group n after node k;
 }
 
 #{
-    #k form "," and -->. (a postag "_") and $++ (n postag "X" and not $++ (n2 postag "X"))# and $++ (k2 form ",") 
+    #k form "," and -->. (a postag "_") and $++ (n postag "X" and not $++ (n2 postag "X"))# and $++ (k2 form ",")
     #::
     #move node a after group n; split after node k;
 #}

@@ -4,17 +4,14 @@
     ::
     move node n before node v; add "att" after node v; move group n before node p;
 }
-#ändrar formen x, säger pastor Klas Persson - Pastor Klas Persson säger att x ##
-#fungerar dock inte helt än då verbet inte hamnar på rätt plats#################
-{   v postag "VB" and $- (k form ",") and $+ (n postag "PM" and $+ (n2 postag "PM" and $+ n3 ) and $++ (s form ".")) and $-- (p form /.*[A-Ö].*/)
+#ändrar formen x, säger KLas knutsson men fungerar inte än :(
+
+{   v postag "VB" and $- (k form ",") and $+ (n postag "PM" and $+ (n2 postag "PM" and $+ (s form "."))) and $-- (p form /.*[A-Ö].*/)
     ::
     move group n before node v; add "att" after node v;
 }
 
-{   name postag "PM" and $+(name2 postag "PM" and $+(name3 postag "PM")) and $++(v postag "VB") and $-- (p form /.*[A-Ö].*/)
-    ::
-    move group name before group p; move node v before group name;
-}
+
 
 {   k form "," and $+ (x not form /\"/)
     ::

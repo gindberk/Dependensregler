@@ -1,14 +1,6 @@
-#A second split rule, which performs splitting for relative
-#clauses. The rule was triggered by a relative pronoun
-#(POS-tag HP) in a nominal phrase.
+#detta är ett slaskdokument där jag skriver över sådant som jag inte vill ha i filerna men ändå vill ha kvar.
 
-#Gör om en man som heter Ove - En man En man heter Ove. Skulle behöva få in en punkt samt göra om man-mannen
-{
-  hp postag "HP" and <--. (v postag "VB") and $- (n postag "NN" and .<-- (d postag "DT")) and not $-- (i deprel "IR" and $++ i2 deprel "JR")
-  ::
-  delete node hp; copy node n after node n; copy node d after node n;
-}
-
+#följande regler är från "temp_script_r.txt
 {
     hp postag "HP" and <--. (v postag "VB") and $- (k form "," and $- (n postag "NN")) and not $-- (i deprel "IR" and $++ i2 deprel "JR")
     ::
@@ -48,10 +40,18 @@
     split before node n and after group v;
 }
 
-
+{
+    n is_top and $+ (p postag "MAD" ) and not $- (x)
+    ::
+    delete group n;
+}
 
 {
     n is_top and $- (d postag "DT" and not $- (x)) and not $+ (y)
     ::
     delete group n;
 }
+"""""Detta är konditionsträningsregeln som kan klistras in i svo, men då fuckar den upp resten av reglerna{   ab postag "AB" and <-. (v postag "VB" and ->. (n deprel "SS" ) and  -->.(x) and .<-(y) and ->.(z)) and not $-(x) and $++(p form ".")
+    ::
+    move node n before node v; move node ab before node p;
+}"
