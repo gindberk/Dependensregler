@@ -62,18 +62,19 @@ class Auto_Rules:
         self.print_seperation()
         print("Old tree:")
         print(new_original)
-        print("New simplification")
+        print("New simplification:")
         print(new_simple)
         self.print_seperation()
         approve = raw_input('Godkanna nytt trad? (y/n): ')
 
         if approve == "y" and not error_list:
+            new_original = new_original.decode("UTF-8")
             with open ("ConLL/gold.conllx", "a") as goldfile:
+                #goldfile.write('\n')
                 goldfile.write(new_simple)
-                goldfile.write('\n')
             with open ("ConLL/original.conllx", "a") as orgfile:
-                orgfile.write(new_original)
                 orgfile.write('\n')
+                orgfile.write(new_original)
             self.save_rules()
 
 

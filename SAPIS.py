@@ -4,6 +4,7 @@ import requests
 import json
 import sys
 import os
+import readline
 
 
 def check_and_add_stopsign(sentence):
@@ -43,9 +44,8 @@ def create_tree_file(taggedText):
 			tree += word_row
 		print(tree)
 
-
 if __name__ == '__main__':
-	sentence = input('Vilken mening vill du testa? ')
+	sentence = input("Mening att utvärdera: ")
 	sent = check_and_add_stopsign(sentence)
 	tagged = tag_sentence(sent)
 	create_tree_file(tagged)
