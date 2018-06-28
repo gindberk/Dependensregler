@@ -56,14 +56,16 @@ class Auto_Rules:
             print("Alla trad ar enligt guldstandard")
 
         else:
-            print("Dessa trad blir felaktiga")
+            print("Dessa trad blir felaktiga:")
             for line in error_list:
                 print(line)
-
-        print(new_simple)
+        self.print_seperation()
+        print("Old tree:")
         print(new_original)
+        print("New simplification")
+        print(new_simple)
+        self.print_seperation()
         approve = raw_input('Godkanna nytt trad? (y/n): ')
-
 
         if approve == "y" and not error_list:
             with open ("ConLL/gold.conllx", "a") as goldfile:
@@ -106,6 +108,10 @@ class Auto_Rules:
                 original_tree += line
 
             return original_tree
+    def print_seperation(self):
+        print("")
+        print("------------------------------------------------")
+        print("")
 
     def main(self):
         "kor funktioner"

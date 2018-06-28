@@ -186,6 +186,7 @@ def get_result(conll, name):
                "temp_scripts/temp_script_split_r.txt",
                "temp_scripts/temp_script_qi.txt"]
     trees = parse_trees(conll)
+    print("Testar script:")
     for script in scripts:
         print(script)
         trees = create_new_trees(script, trees)
