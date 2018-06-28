@@ -45,7 +45,7 @@ def create_tree_file(taggedText):
 		print(tree)
 
 if __name__ == '__main__':
-	sentence = input("Mening att utvärdera: ")
+	sentence = input("Mening att utvardera: ")
 	sent = check_and_add_stopsign(sentence)
 	tagged = tag_sentence(sent)
 	create_tree_file(tagged)
