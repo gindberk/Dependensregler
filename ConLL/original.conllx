@@ -84,3 +84,23 @@
 7	NÄRMAST	nära	AB	AB	SUV	8	CA	_	_
 8	STRANDEN	strand	NN	NN	UTR|SIN|DEF|NOM	6	OO	_	_
 9	.	.	MAD	MAD	_	2	IP	_	_
+
+1	På	på	PP	PP	_	4	RA	_	_
+2	lövgärdets	lövgärdets	RG	RG	NOM	3	DT	_	_
+3	förskolor	förskola	NN	NN	UTR|PLU|IND|NOM	1	PA	_	_
+4	har	ha	VB	VB	PRS|AKT	0	ROOT	_	_
+5	man	man	PN	PN	UTR|SIN|IND|SUB	4	SS	_	_
+6	varje	varje	DT	DT	UTR/NEU|SIN|IND	7	DT	_	_
+7	år	år	NN	NN	NEU|SIN|IND|NOM	4	OO	_	_
+8	en	en	DT	DT	UTR|SIN|IND	9	DT	_	_
+9	konferens	konferens	NN	NN	UTR|SIN|IND|NOM	7	CJ	_	_
+10	.	.	MAD	MAD	_	4	IP	_	_
+
+1	Hur	hur	HA	HA	_	3	AA	_	_
+2	matematik	matematik	NN	NN	UTR|SIN|IND|NOM	3	SS	_	_
+3	kan	kunna	VB	VB	PRS|AKT	0	ROOT	_	_
+4	användas	använda	VB	VB	INF|SFO	3	VG	_	_
+5	i	i	PP	PP	_	4	RA	_	_
+6	olika	olik	JJ	JJ	POS|UTR/NEU|PLU|IND/DEF|NOM	7	AT	_	_
+7	situationer	situation	NN	NN	UTR|PLU|IND|NOM	5	PA	_	_
+8	.	.	MAD	MAD	_	3	IP	_	_

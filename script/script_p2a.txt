@@ -84,12 +84,14 @@
     ::
     conj v pres; set feats v "PRS|AKTX"; add "man" after node v;
 }
+#denna adderar ordet "man" sist i meningen
 
 {
     v feats /sfo/gi
     ::
     conj v pres; set feats v "PRS|AKTX"; add "man" after node v;
 }
+
 
 {
     v feats /x/gi and $-- (man form "man" and postag "_") and $-- (ha postag "HA") and .-> (v2 postag "VB")
@@ -109,16 +111,32 @@
     set form fs "man";
 }
 
-{
-    v feats /x/gi and -->. (man form "man" and postag "_") and .--> (v2 postag "VB")
-    ::
-    move node man after node v2;
-}
+#här flyttas man:et till efter "kan" kommenterar ut denna då den verkar förstöra
+#{
+#    v feats /x/gi and -->. (man form "man" and postag "_") and .--> (v2 postag "VB")
+#    ::
+#    move node man after node v2;
+#}
 
+#flyttar man:et efter det första ordet om det första ordets postag = "HA"
 {
-    v feats /x/gi and -->. (man form "man" and postag "_")
+    v feats /x/gi and -->. (man form "man" and postag "_") and $-- (h postag "HA" and not $-(X))
     ::
-    move node man after node v;
+    move node man after node h;
+}
+#flyttar substantivet så att de två verben hamnar före det
+{
+    v deprel "ROOT" and $+(v2 feats /x/gi) and $-(n postag "NN")
+    ::
+    move node n after node v2;
+
+}
+#ändrar tempus och form på verbet om det har en närliggande förälder till vänster som är meningens rot
+{
+    v postag "VB" and feats "PRS|AKTX" and .-> ( v2 deprel "ROOT")
+    ::
+    conj v inf;
+
 }
 
 {
