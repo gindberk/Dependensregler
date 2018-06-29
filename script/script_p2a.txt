@@ -155,14 +155,27 @@
 }
 #ändrar tempus och form på verbet om det har en närliggande förälder till vänster som är meningens rot
 {
-    v postag "VB" and feats "PRS|AKTX" and .-> ( v2 deprel "ROOT") 
+    v postag "VB" and feats "PRS|AKTX" and .-> ( v2 deprel "ROOT")
     ::
     conj v inf;
 
 }
 
+#om det finns två passiva verb i en sats, hitta de dubbla "man" och placera det andra mannet innan det andra verbet
+{   man form "man" and $+ (man2 form "man") and <--.(v2 feats "PRS|AKTX")
+    ::
+    move node man before node v2;
 
+}
 
+#Om det finns två passiva verb i en sats, byt tempus på det andra passiva verbet
+
+{
+    v postag "VB" and feats "PRS|AKTX" and .--> ( v2 postag "VB" and .-->(v3 deprel "ROOT"))
+    ::
+    conj v inf;
+
+}
 {
     s postag "HP" and <--. (v feats /x/gi and -->. (m postag "_")) and not $++ (f form "?")
     ::

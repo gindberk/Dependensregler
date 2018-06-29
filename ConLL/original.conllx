@@ -115,3 +115,67 @@
 8	av	av	PP	PP	_	7	ET	_	_
 9	arbetssätt	arbetssätt	NN	NN	NEU|SIN|IND|NOM	8	PA	_	_
 10	.	.	MAD	MAD	_	3	IP	_	_
+
+1	Därigenom	därigenom	AB	AB	_	2	TA	_	_
+2	ska	skola	VB	VB	PRS|AKT	0	ROOT	_	_
+3	eleverna	elev	NN	NN	UTR|PLU|DEF|NOM	2	SS	_	_
+4	ges	ge	VB	VB	INF|SFO	2	VG	_	_
+5	möjlighet	möjlighet	NN	NN	UTR|SIN|IND|NOM	4	OO	_	_
+6	att	att	IE	IE	_	5	ET	_	_
+7	utveckla	utveckla	VB	VB	INF|AKT	6	IF	_	_
+8	kreativitet	kreativitet	NN	NN	UTR|SIN|IND|NOM	7	OO	_	_
+9	.	.	MAD	MAD	_	2	IP	_	_
+
+1	Eleverna	elev	NN	NN	UTR|PLU|DEF|NOM	2	SS	_	_
+2	ska	skola	VB	VB	PRS|AKT	0	ROOT	_	_
+3	därför	därför	AB	AB	_	2	AA	_	_
+4	utmanas	utmana	VB	VB	INF|SFO	5	MS	_	_
+5	och	och	KN	KN	_	2	TA	_	_
+6	stimuleras	stimulera	VB	VB	INF|SFO	5	+F	_	_
+7	att	att	IE	IE	_	6	OA	_	_
+8	använda	använda	VB	VB	INF|AKT	7	IF	_	_
+9	matematiska	matematisk	JJ	JJ	POS|UTR/NEU|PLU|IND/DEF|NOM	11	DT	_	_
+10	begrepp	begrepp	NN	NN	NEU|PLU|IND|NOM	11	CJ	_	_
+11	och	och	KN	KN	_	8	OO	_	_
+12	resonemang	resonemang	NN	NN	NEU|PLU|IND|NOM	11	CJ	_	_
+13	för	för	PP	PP	_	16	CJ	_	_
+14	att	att	IE	IE	_	13	PA	_	_
+15	kommunicera	kommunicera	VB	VB	INF|AKT	14	IF	_	_
+16	och	och	KN	KN	_	11	CJ	_	_
+17	lösa	lösa	VB	VB	INF|AKT	16	+F	_	_
+18	problem	problem	NN	NN	NEU|PLU|IND|NOM	17	OO	_	_
+19	på	på	PP	PP	_	18	ET	_	_
+20	olika	olik	JJ	JJ	POS|UTR/NEU|PLU|IND/DEF|NOM	21	AT	_	_
+21	sätt	sätt	NN	NN	NEU|PLU|IND|NOM	19	PA	_	_
+22	med	med	PP	PP	_	17	AA	_	_
+23	olika	olik	JJ	JJ	POS|UTR/NEU|PLU|IND/DEF|NOM	24	AT	_	_
+24	uttrycksformer	uttrycksform	NN	NN	UTR|PLU|IND|NOM	22	PA	_	_
+25	samt	samt	AB	AB	_	26	CA	_	_
+26	för	för	PP	PP	_	29	MS	_	_
+27	att	att	IE	IE	_	26	PA	_	_
+28	utforska	utforska	VB	VB	INF|AKT	27	IF	_	_
+29	och	och	KN	KN	_	17	OA	_	_
+30	beskriva	beskriva	VB	VB	INF|AKT	29	+F	_	_
+31	sin	sin	PS	PS	UTR|SIN|DEF	32	DT	_	_
+32	omvärld	omvärld	NN	NN	UTR|SIN|IND|NOM	30	OO	_	_
+33	.	.	MAD	MAD	_	2	IP	_	_
+
+1	Maten	mat	NN	NN	UTR|SIN|DEF|NOM	2	SS	_	_
+2	ska	skola	VB	VB	PRS|AKT	0	ROOT	_	_
+3	lagas	laga	VB	VB	INF|SFO	2	VG	_	_
+4	.	.	MAD	MAD	_	2	IP	_	_
+
+1	Jobbet	jobb	NN	NN	NEU|SIN|DEF|NOM	2	SS	_	_
+2	måste	måste	VB	VB	PRS|AKT	0	ROOT	_	_
+3	därför	därför	AB	AB	_	2	AA	_	_
+4	göras	göra	VB	VB	INF|SFO	2	VG	_	_
+5	.	.	MAD	MAD	_	2	IP	_	_
+
+1	Koden	kod	NN	NN	UTR|SIN|DEF|NOM	2	SS	_	_
+2	ska	skola	VB	VB	PRS|AKT	0	ROOT	_	_
+3	skrivas	skriva	VB	VB	INF|SFO	4	CJ	_	_
+4	och	och	KN	KN	_	6	SS	_	_
+5	datan	data	NN	NN	UTR|SIN|DEF|NOM	4	CJ	_	_
+6	ska	skola	VB	VB	PRS|AKT	2	VG	_	_
+7	skapas	skapa	VB	VB	INF|SFO	6	VG	_	_
+8	.	.	MAD	MAD	_	2	IP	_	_
