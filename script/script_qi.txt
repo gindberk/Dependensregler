@@ -13,7 +13,7 @@
 
 
 
-{   k form "," and $+ (x not form /\"/)
+{   k form "," and not $+(c postag "KN" or postag "SN")
     ::
     delete node k;
 }
@@ -60,8 +60,9 @@
     set form k ",";
 }
 
-{
-    p form "." and $+ (x not form /\"/)
-    ::
-    delete node p;
-}
+#Fuckar med split_k
+#{
+#    p form "." and $+ (x not form /\"/)
+#    ::
+#    delete node p;
+#}
