@@ -104,3 +104,14 @@
 6	olika	olik	JJ	JJ	POS|UTR/NEU|PLU|IND/DEF|NOM	7	AT	_	_
 7	situationer	situation	NN	NN	UTR|PLU|IND|NOM	5	PA	_	_
 8	.	.	MAD	MAD	_	3	IP	_	_
+
+1	i	i	PP	PP	_	3	RA	_	_
+2	undervisningen	undervisning	NN	NN	UTR|SIN|DEF|NOM	1	PA	_	_
+3	ska	skola	VB	VB	PRS|AKT	0	ROOT	_	_
+4	eleverna	elev	NN	NN	UTR|PLU|DEF|NOM	3	SS	_	_
+5	erbjudas	erbjuda	VB	VB	INF|SFO	3	VG	_	_
+6	en	en	DT	DT	UTR|SIN|IND	7	DT	_	_
+7	variation	variation	NN	NN	UTR|SIN|IND|NOM	5	OO	_	_
+8	av	av	PP	PP	_	7	ET	_	_
+9	arbetssätt	arbetssätt	NN	NN	NEU|SIN|IND|NOM	8	PA	_	_
+10	.	.	MAD	MAD	_	3	IP	_	_
