@@ -199,3 +199,12 @@
 8	ska	skola	VB	VB	PRS|AKT	3	VG	_	_
 9	slängas	slänga	VB	VB	INF|SFO	8	VG	_	_
 10	.	.	MAD	MAD	_	3	IP	_	_
+
+1	Katja	Katja	PM	PM	NOM	2	SS	_	_
+2	skulle	skola	VB	VB	PRT|AKT	0	ROOT	_	_
+3	se	se	VB	VB	INF|AKT	2	VG	_	_
+4	till	till	PL	PL	_	3	PL	_	_
+5	att	att	SN	SN	_	3	OO	_	_
+6	räkningarna	räkning	NN	NN	UTR|PLU|DEF|NOM	7	SS	_	_
+7	betalades	betala	VB	VB	PRT|SFO	5	UA	_	_
+8	.	.	MAD	MAD	_	2	IP	_	_

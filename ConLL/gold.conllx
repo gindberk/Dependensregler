@@ -207,3 +207,12 @@
 11	slänga	slänga	VB	VB	PRS|AKTX	9	VG	_	_
 12	.	.	MAD	MAD	_	3	IP	_	_
 
+1	Katja	Katja	PM	PM	NOM	2	SS	_	_
+2	skulle	skola	VB	VB	PRT|AKT	0	ROOT	_	_
+3	se	se	VB	VB	INF|AKT	2	VG	_	_
+4	till	till	PL	PL	_	3	PL	_	_
+5	att	att	SN	SN	_	3	OO	_	_
+6	betala	betala	VB	VB	PRT|AKTX	5	UA	_	_
+7	räkningarna	räkning	NN	NN	UTR|PLU|DEF|NOM	6	SS	_	_
+8	.	.	MAD	MAD	_	2	IP	_	_
+
