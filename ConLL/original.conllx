@@ -199,7 +199,7 @@
 8	ska	skola	VB	VB	PRS|AKT	3	VG	_	_
 9	slängas	slänga	VB	VB	INF|SFO	8	VG	_	_
 10	.	.	MAD	MAD	_	3	IP	_	_
-1	Jag	jag	PN	PN	UTR|SIN|DEF|SUB	2	SS	_	_
+
 1	Jag	jag	PN	PN	UTR|SIN|DEF|SUB	2	SS	_	_
 2	har	ha	VB	VB	PRS|AKT	0	ROOT	_	_
 3	en	en	DT	DT	UTR|SIN|IND	4	DT	_	_
@@ -220,21 +220,3 @@
 7	utan	utan	PP	PP	_	6	UA	_	_
 8	fälgar	fälg	NN	NN	UTR|PLU|IND|NOM	7	PA	_	_
 9	.	.	MAD	MAD	_	2	IP	_	_
-
-1	Jag	jag	PN	PN	UTR|SIN|DEF|SUB	2	SS	_	_
-2	har	ha	VB	VB	PRS|AKT	0	ROOT	_	_
-3	en	en	DT	DT	UTR|SIN|IND	4	DT	_	_
-4	mört	mört	NN	NN	UTR|SIN|IND|NOM	2	CJ	_	_
-5	.	,	MID	MID	_	2	IK	_	_
-6	den	den	PN	PN	UTR|SIN|DEF|SUB/OBJ	7	SS	_	_
-7	gillar	gilla	VB	VB	PRS|AKT	2	CJ	_	_
-8	korv	korv	NN	NN	UTR|SIN|IND|NOM	7	OO	_	_
-9	.	.	MAD	MAD	_	2	IP	_	_
-
-1	Jag	jag	PN	PN	UTR|SIN|DEF|SUB	2	SS	_	_
-2	har	ha	VB	VB	PRS|AKT	0	ROOT	_	_
-3	en	en	DT	DT	UTR|SIN|IND	4	DT	_	_
-4	bil	bil	NN	NN	UTR|SIN|IND|NOM	2	OO	_	_
-5	utan	utan	PP	PP	_	4	UA	_	_
-6	fälgar	fälg	NN	NN	UTR|PLU|IND|NOM	5	PA	_	_
-7	.	.	MAD	MAD	_	2	IP	_	_

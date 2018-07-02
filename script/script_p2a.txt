@@ -1,0 +1,210 @@
+# Passive to active
+
+{
+    v feats "PRS|SFO" and $++ (av form "av" and deprel "AG" and > (pa deprel "PA")) and > (s deprel "SS" or deprel "OO" and postag "NN")
+    ::
+    conj v pres; set feats v "PRS|AKTX"; set form av "x"; move node v before group s; move group pa before group s;
+}
+
+
+{
+    v feats "PRT|SFO" and $++ (av form "av" and deprel "AG" and > (pa deprel "PA")) and > (s deprel "SS" or deprel "OO" and postag "NN")
+    ::
+    conj v pret; set feats v "PRT|AKTX"; set form av "x"; move node v before group s; move group pa before group s;
+}
+
+{
+    v feats /aktx/gi and $++ (x form "x")
+    ::
+    delete node x; set feats v "AKT";
+}
+
+{
+    v postag "VB" and lemma /\w+s/
+    ::
+    set feats v "AKTX";
+}
+
+{
+    v feats "SUP|SFO" and $- (v2 postag "VB") and not > (pn postag "PN" or postag "PM") and not $- (o form "och" and < (p postag "PN" or postag "PM"))
+    ::
+    conj v sup; set feats v "SUP|AKTX"; add "man" after node v;
+}
+
+{
+    v feats "SUP|AKTX" and $++ (m form "man" and postag "_") and < (v2 postag "VB")
+    ::
+    move node m before node v2;
+}
+
+{
+    v feats "INF|SFO" and not > (pn postag "PN" or postag "PM") and $- (o form "och" and .<-- (v2 postag "VB")) and not .--> (v3 feats "PRS|AKT")
+    ::
+    conj v inf; set feats v "INF|AKTX";
+}
+
+{
+    v feats "INF|SFO" and not > (pn postag "PN" or postag "PM") and not $- (o form "och" and .<-- (v2 postag "VB")) and not .--> (v3 feats "PRS|AKT")
+    ::
+    conj v inf; set feats v "INF|AKTX"; add "man" after node v;
+}
+
+{
+    v feats "INF|SFO" and > (pn postag "PN" or postag "PM") and not .--> (v3 feats "PRS|AKT")
+    ::
+    conj v inf; set feats v "INF|AKTX";
+}
+
+{
+    v feats "PRT|SFO" and not > (pn postag "PN" or postag "PM") and $- (o form "och" and .<-- (v2 postag "VB"))
+    ::
+    conj v pret; set feats v "PRT|AKTX";
+}
+
+{
+    v feats "PRT|SFO" and not > (pn postag "PN" or postag "PM") and not $- (o form "och" and .<-- (v2 postag "VB"))
+    ::
+    conj v pret; set feats v "PRT|AKTX"; add "man" after node v;
+}
+
+{
+    v feats "PRT|SFO" and > (pn postag "PN" or postag "PM")
+    ::
+    conj v pret; set feats v "PRT|AKTX";
+}
+
+{
+    v feats /sfo/gi and not > (pn postag "PN" or postag "PM") and $- (o form "och" and .<-- (v2 postag "VB"))
+    ::
+    conj v pres; set feats v "PRS|AKTX";
+}
+
+{
+    v feats /sfo/gi and not > (pn postag "PN" or postag "PM") and not $- (o form "och" and .<-- (v2 postag "VB"))
+    ::
+    conj v pres; set feats v "PRS|AKTX"; add "man" after node v;
+}
+#denna adderar ordet "man" sist i meningen
+
+{
+    v feats /sfo/gi
+    ::
+    conj v pres; set feats v "PRS|AKTX"; add "man" after node v;
+}
+
+
+{
+    v feats /x/gi and $-- (man form "man" and postag "_") and $-- (ha postag "HA") and .-> (v2 postag "VB")
+    ::
+    set feats v "AKT"; move node v after node ha; move node v after node ha; move node v after node ha;
+}
+
+{
+    v feats /x/gi and ->. (man form "man" and postag "_") and .<-- (ab postag "AB")
+    ::
+    move node man before node ab;
+}
+
+{
+    v feats /x/gi and .<-- (fs deprel "FS")
+    ::
+    set form fs "man";
+}
+
+#här flyttas man:et till efter "kan". kommenterar ut denna då den verkar förstöra
+#{
+#    v feats /x/gi and -->. (man form "man" and postag "_") and .--> (v2 postag "VB")
+#    ::
+#    move node man after node v2;
+#}
+
+#flyttar man:et efter det första ordet om det första ordets postag = "HA"
+{
+    v feats /x/gi and -->. (man form "man" and postag "_") and $-- (h postag "HA" and not $-(X))
+    ::
+    move node man after node h;
+}
+
+#flyttar man:et efter det roten om rotens postag = "VB"
+{
+    v feats /x/gi and -->. (man form "man" and postag "_") and $-- (p deprel "ROOT" and postag "VB")
+    ::
+    move node man after node p;
+}
+#byter plats på ett substantiv och ett verb om substantivet är SS och verbets förälder är en ROOT- funkar ej
+{
+    n postag "NN" and deprel "SS" and $+(v postag "VB" and .-->(v2 deprel "ROOT"))
+    ::
+    move node n after node v;
+}
+
+{
+    v postag "VB" and feats "PRS|AKTX" and .--> ( v2 deprel "ROOT")
+    ::
+    conj v inf;
+
+}
+
+
+#flyttar substantivet så att de två verben hamnar före det
+{
+    v deprel "ROOT" and $+(v2 feats /x/gi) and $-(n postag "NN")
+    ::
+    move node n after node v2;
+
+}
+#ändrar tempus och form på verbet om det har en närliggande förälder till vänster som är meningens rot
+{
+    v postag "VB" and feats "PRS|AKTX" and .-> ( v2 deprel "ROOT")
+    ::
+    conj v inf;
+
+}
+
+#om det finns två passiva verb i en sats, hitta de dubbla "man" och placera det andra mannet innan det andra verbet
+{   man form "man" and $+ (man2 form "man") and <--.(v2 feats "PRS|AKTX")
+    ::
+    move node man before node v2;
+
+}
+# om det finns två passiva verb i satsen, och de båda "man" har hamnat sist i meningen, flyttas de på plats
+#HÄR ÄR DU MAJA (note: denna regel behöver korrigeras, då den inte klarar av 2 passiva verb i en mening än )
+{   man form "man" and .-->(v postag "VB") and $+ (man2 form "man" and .->(v2 postag "VB")) 
+    ::
+    move node man before node v; move node man2 before node v2;
+
+}
+
+#Om det finns två passiva verb i en sats, byt tempus på det andra passiva verbet
+
+{
+    v postag "VB" and feats "PRS|AKTX" and .--> ( v2 postag "VB" and .-->(v3 deprel "ROOT"))
+    ::
+    conj v inf;
+
+}
+{
+    s postag "HP" and <--. (v feats /x/gi and -->. (m postag "_")) and not $++ (f form "?")
+    ::
+    move node m after node s;
+}
+
+{
+    s postag "HP" and <--. (v feats /x/gi and -->. (v2 postag "VB" and > (m postag "_"))) and not $++ (f form "?")
+    ::
+    move node m after node s;
+}
+
+
+
+{
+    sfo feats /aktx/gi and not lemma /\w+s/ and -->. (v feats "INF|AKT")
+    ::
+    conj v pres;
+}
+
+{
+    ss deprel "SS" and not postag "HA" and not postag "HP" and $+ (v feats /x/gi and $+ (m postag "_"))
+    ::
+    move node ss after node v; move node m before node ss;
+}
