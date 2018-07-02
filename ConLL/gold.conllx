@@ -183,63 +183,6 @@
 9	skapa	skapa	VB	VB	PRS|AKTX	7	VG	_	_
 10	.	.	MAD	MAD	_	2	IP	_	_
 
-1	På	på	PP	PP	_	4	RA	_	_
-2	lövgärdets	lövgärdets	RG	RG	NOM	3	DT	_	_
-3	förskolor	förskola	NN	NN	UTR|PLU|IND|NOM	1	PA	_	_
-4	har	ha	VB	VB	PRS|AKT	0	ROOT	_	_
-5	de	man	PN	PN	UTR|SIN|IND|SUB	4	SS	_	_
-6	varje	varje	DT	DT	UTR/NEU|SIN|IND	7	DT	_	_
-7	år	år	NN	NN	NEU|SIN|IND|NOM	4	OO	_	_
-8	en	en	DT	DT	UTR|SIN|IND	9	DT	_	_
-9	konferens	konferens	NN	NN	UTR|SIN|IND|NOM	7	CJ	_	_
-10	.	.	MAD	MAD	_	4	IP	_	_
-
-1	Hur	hur	HA	HA	_	3	AA	_	_
-2	man	man	_	_	_	4	_	_	_
-3	kan	kunna	VB	VB	PRS|AKT	0	ROOT	_	_
-4	använda	använda	VB	VB	PRS|AKTX	3	VG	_	_
-5	matematik	matematik	NN	NN	UTR|SIN|IND|NOM	3	SS	_	_
-6	i	i	PP	PP	_	4	RA	_	_
-7	olika	olik	JJ	JJ	POS|UTR/NEU|PLU|IND/DEF|NOM	8	AT	_	_
-8	situationer	situation	NN	NN	UTR|PLU|IND|NOM	6	PA	_	_
-9	.	.	MAD	MAD	_	3	IP	_	_
-
-1	i	i	PP	PP	_	3	RA	_	_
-2	undervisningen	undervisning	NN	NN	UTR|SIN|DEF|NOM	1	PA	_	_
-3	ska	skola	VB	VB	PRS|AKT	0	ROOT	_	_
-4	man	man	_	_	_	5	_	_	_
-5	erbjuda	erbjuda	VB	VB	PRS|AKTX	3	VG	_	_
-6	eleverna	elev	NN	NN	UTR|PLU|DEF|NOM	3	SS	_	_
-7	en	en	DT	DT	UTR|SIN|IND	8	DT	_	_
-8	variation	variation	NN	NN	UTR|SIN|IND|NOM	5	OO	_	_
-9	av	av	PP	PP	_	8	ET	_	_
-10	arbetssätt	arbetssätt	NN	NN	NEU|SIN|IND|NOM	9	PA	_	_
-11	.	.	MAD	MAD	_	3	IP	_	_
-
-1	Maten	mat	NN	NN	UTR|SIN|DEF|NOM	2	SS	_	_
-2	ska	skola	VB	VB	PRS|AKT	0	ROOT	_	_
-3	man	man	_	_	_	4	_	_	_
-4	laga	laga	VB	VB	PRS|AKTX	2	VG	_	_
-5	.	.	MAD	MAD	_	2	IP	_	_
-
-1	Jobbet	jobb	NN	NN	NEU|SIN|DEF|NOM	2	SS	_	_
-2	måste	måste	VB	VB	PRS|AKT	0	ROOT	_	_
-3	man	man	_	_	_	5	_	_	_
-4	därför	därför	AB	AB	_	2	AA	_	_
-5	göra	göra	VB	VB	PRS|AKTX	2	VG	_	_
-6	.	.	MAD	MAD	_	2	IP	_	_
-
-1	Koden	kod	NN	NN	UTR|SIN|DEF|NOM	2	SS	_	_
-2	ska	skola	VB	VB	PRS|AKT	0	ROOT	_	_
-3	man	man	_	_	_	4	_	_	_
-4	skriva	skriva	VB	VB	INF|AKTX	5	CJ	_	_
-5	och	och	KN	KN	_	7	SS	_	_
-6	datan	data	NN	NN	UTR|SIN|DEF|NOM	5	CJ	_	_
-7	ska	skola	VB	VB	PRS|AKT	2	VG	_	_
-8	man	man	_	_	_	9	_	_	_
-9	skapa	skapa	VB	VB	PRS|AKTX	7	VG	_	_
-10	.	.	MAD	MAD	_	2	IP	_	_
-
 1	Maten	mat	NN	NN	UTR|SIN|DEF|NOM	2	SS	_	_
 2	ska	skola	VB	VB	PRS|AKT	0	ROOT	_	_
 3	man	man	_	_	_	4	_	_	_
@@ -282,12 +225,3 @@
 6	fälgar	fälg	NN	NN	UTR|PLU|IND|NOM	5	PA	_	_
 7	.	.	MAD	MAD	_	2	IP	_	_
 
-1	Jag	jag	PN	PN	UTR|SIN|DEF|SUB	2	SS	_	_
-2	är	vara	VB	VB	PRS|AKT	0	ROOT	_	_
-3	en	en	DT	DT	UTR|SIN|IND	4	DT	_	_
-4	mört	mört	NN	NN	UTR|SIN|IND|NOM	2	CJ	_	_
-5	jag	jag	PN	PN	UTR|SIN|DEF|SUB	6	SS	_	_
-6	har	ha	VB	VB	PRS|AKT	2	CJ	_	_
-7	inga	ingen	DT	DT	UTR/NEU|PLU|IND	8	DT	_	_
-8	fälgar	fälg	NN	NN	UTR|PLU|IND|NOM	6	OO	_	_
-9	.	.	MAD	MAD	_	2	IP	_	_
