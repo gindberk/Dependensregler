@@ -167,6 +167,13 @@
     move node man before node v2;
 
 }
+# om det finns två passiva verb i satsen, och de båda "man" har hamnat sist i meningen, flyttas de på plats
+#HÄR ÄR DU MAJA (note: denna regel behöver korrigeras, då den inte klarar av 2 passiva verb i en mening än )
+{   man form "man" and .-->(v postag "VB") and $+ (man2 form "man" and .->(v2 postag "VB")) 
+    ::
+    move node man before node v; move node man2 before node v2;
+
+}
 
 #Om det finns två passiva verb i en sats, byt tempus på det andra passiva verbet
 

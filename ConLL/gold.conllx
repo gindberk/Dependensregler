@@ -183,3 +183,27 @@
 9	skapa	skapa	VB	VB	PRS|AKTX	7	VG	_	_
 10	.	.	MAD	MAD	_	2	IP	_	_
 
+1	Maten	mat	NN	NN	UTR|SIN|DEF|NOM	2	SS	_	_
+2	ska	skola	VB	VB	PRS|AKT	0	ROOT	_	_
+3	man	man	_	_	_	4	_	_	_
+4	äta	äta	VB	VB	INF|AKTX	5	CJ	_	_
+5	och	och	KN	KN	_	7	SS	_	_
+6	drycken	dryck	NN	NN	UTR|SIN|DEF|NOM	5	CJ	_	_
+7	ska	skola	VB	VB	PRS|AKT	2	VG	_	_
+8	man	man	_	_	_	9	_	_	_
+9	dricka	dricka	VB	VB	PRS|AKTX	7	VG	_	_
+10	.	.	MAD	MAD	_	2	IP	_	_
+
+1	Alla	all	DT	DT	UTR/NEU|PLU|IND/DEF	2	DT	_	_
+2	datorer	dator	NN	NN	UTR|PLU|IND|NOM	3	SS	_	_
+3	ska	skola	VB	VB	PRS|AKT	0	ROOT	_	_
+4	man	man	_	_	_	5	_	_	_
+5	uppdatera	uppdatera	VB	VB	INF|AKTX	6	CJ	_	_
+6	och	och	KN	KN	_	9	SS	_	_
+7	alla	all	DT	DT	UTR/NEU|PLU|IND/DEF	8	DT	_	_
+8	tangentbord	tangentbord	NN	NN	NEU|PLU|IND|NOM	6	CJ	_	_
+9	ska	skola	VB	VB	PRS|AKT	3	VG	_	_
+10	man	man	_	_	_	11	_	_	_
+11	slänga	slänga	VB	VB	PRS|AKTX	9	VG	_	_
+12	.	.	MAD	MAD	_	3	IP	_	_
+

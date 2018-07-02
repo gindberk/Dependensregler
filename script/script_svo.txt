@@ -5,20 +5,20 @@
 #For straight word order, sentences indicating reversed word order were matched. That is, sentences where the first word is an adverb and the second word is a verb.
 
 #PEDAGOGHELVETET
-{   ab postag "AB" and <-. (v postag "VB" and -->. (n deprel "SS" and not .<-(d deprel "DT") or feats /sub/gi and not .<-(d deprel "DT"))) and not $-(x)
-    ::
-    move node ab after node v; move node n before node ab;
-}
+#{   ab postag "AB" and <-. (v postag "VB" and -->. (n deprel "SS" and not .<-(d deprel "DT") or feats /sub/gi and not .<-(d deprel "DT"))) and not $-(x)
+#    ::
+#    move node ab after node v; move node n before node ab;
+#}
 
-{   ab postag "AB" and <-. (v postag "VB" and -->. (n deprel "SS" and .<-(d deprel "DT") or feats /sub/gi and .<-(d deprel "DT"))) and not $-(x)
-    ::
-    move node ab after node v; move node d before node ab;
-}
+#{   ab postag "AB" and <-. (v postag "VB" and -->. (n deprel "SS" and .<-(d deprel "DT") or feats /sub/gi and .<-(d deprel "DT"))) and not $-(x)
+#    ::
+#    move node ab after node v; move node d before node ab;
+#}
 
 
 
 ####KONDITIONSTRÄNING KOMMER IN I BILDEN HÄR
-{   ab postag "AB" and <-. (v postag "VB" and ->. (n deprel "SS" ) and  -->.(x) and .<-(y) and ->.(z)) and not $-(x) and $++(p form ".")
-    ::
-    move node n before node v; move node ab before node p;
-}
+#{   ab postag "AB" and <-. (v postag "VB" and ->. (n deprel "SS" ) and  -->.(x) and .<-(y) and ->.(z)) and not $-(x) and $++(p form ".")
+#    ::
+#    move node n before node v; move node ab before node p;
+#}

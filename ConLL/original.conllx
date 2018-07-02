@@ -179,3 +179,23 @@
 6	ska	skola	VB	VB	PRS|AKT	2	VG	_	_
 7	skapas	skapa	VB	VB	INF|SFO	6	VG	_	_
 8	.	.	MAD	MAD	_	2	IP	_	_
+
+1	Maten	mat	NN	NN	UTR|SIN|DEF|NOM	2	SS	_	_
+2	ska	skola	VB	VB	PRS|AKT	0	ROOT	_	_
+3	ätas	äta	VB	VB	INF|SFO	4	CJ	_	_
+4	och	och	KN	KN	_	6	SS	_	_
+5	drycken	dryck	NN	NN	UTR|SIN|DEF|NOM	4	CJ	_	_
+6	ska	skola	VB	VB	PRS|AKT	2	VG	_	_
+7	drickas	dricka	VB	VB	INF|SFO	6	VG	_	_
+8	.	.	MAD	MAD	_	2	IP	_	_
+
+1	Alla	all	DT	DT	UTR/NEU|PLU|IND/DEF	2	DT	_	_
+2	datorer	dator	NN	NN	UTR|PLU|IND|NOM	3	SS	_	_
+3	ska	skola	VB	VB	PRS|AKT	0	ROOT	_	_
+4	uppdateras	uppdatera	VB	VB	INF|SFO	5	CJ	_	_
+5	och	och	KN	KN	_	8	SS	_	_
+6	alla	all	DT	DT	UTR/NEU|PLU|IND/DEF	7	DT	_	_
+7	tangentbord	tangentbord	NN	NN	NEU|PLU|IND|NOM	5	CJ	_	_
+8	ska	skola	VB	VB	PRS|AKT	3	VG	_	_
+9	slängas	slänga	VB	VB	INF|SFO	8	VG	_	_
+10	.	.	MAD	MAD	_	3	IP	_	_
