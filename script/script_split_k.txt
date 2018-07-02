@@ -1,5 +1,4 @@
-# Split-k
-
+#Split K
 { k form "," and $+ (c postag "KN" or postag "SN") and $++ (v postag "VB") and $++ (k2 form "," and $-- (v))
     ::
     set form k2 "."; split after node k and after node k2;# delete node k;

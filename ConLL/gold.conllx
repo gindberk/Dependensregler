@@ -281,3 +281,13 @@
 5	utan	utan	PP	PP	_	4	UA	_	_
 6	fälgar	fälg	NN	NN	UTR|PLU|IND|NOM	5	PA	_	_
 7	.	.	MAD	MAD	_	2	IP	_	_
+
+1	Jag	jag	PN	PN	UTR|SIN|DEF|SUB	2	SS	_	_
+2	är	vara	VB	VB	PRS|AKT	0	ROOT	_	_
+3	en	en	DT	DT	UTR|SIN|IND	4	DT	_	_
+4	mört	mört	NN	NN	UTR|SIN|IND|NOM	2	CJ	_	_
+5	jag	jag	PN	PN	UTR|SIN|DEF|SUB	6	SS	_	_
+6	har	ha	VB	VB	PRS|AKT	2	CJ	_	_
+7	inga	ingen	DT	DT	UTR/NEU|PLU|IND	8	DT	_	_
+8	fälgar	fälg	NN	NN	UTR|PLU|IND|NOM	6	OO	_	_
+9	.	.	MAD	MAD	_	2	IP	_	_
