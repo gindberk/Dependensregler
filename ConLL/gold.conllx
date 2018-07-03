@@ -225,3 +225,35 @@
 6	fälgar	fälg	NN	NN	UTR|PLU|IND|NOM	5	PA	_	_
 7	.	.	MAD	MAD	_	2	IP	_	_
 
+1	Erik	Erik	PM	PM	NOM	2	HD	_	_
+2	sa	säga	VB	VB	PRT|AKT	0	ROOT	_	_
+3	att	att	_	_	_	2	_	_	_
+4	Hampus	Hampus	PM	PM	NOM	2	AA	_	_
+5	är	vara	VB	VB	PRS|AKT	4	IF	_	_
+6	en	en	DT	DT	UTR|SIN|IND	8	DT	_	_
+7	alkoholiserad	alkoholiserad	PC	PC	PRF|UTR|SIN|IND|NOM	8	AT	_	_
+8	gnom	gnom	NN	NN	UTR|SIN|IND|NOM	5	SP	_	_
+9	med	med	PP	PP	_	8	ET	_	_
+10	ögonlapp	ögonlapp	NN	NN	UTR|PLU|IND|NOM	11	CJ	_	_
+11	och	och	KN	KN	_	9	PA	_	_
+12	rövsvett	rövsvett	RG	RG	NOM	11	CJ	_	_
+13	.	.	MAD	MAD	_	2	IP	_	_
+
+1	Erik	Erik	PM	PM	NOM	8	RA	_	_
+2	sa	säga	VB	VB	PRT|AKT	1	JC	_	_
+3	att	att	_	_	_	2	_	_	_
+4	Hampus	Hampus	PM	PM	NOM	0	ROOT	_	_
+5	är	vara	VB	VB	PRS|AKT	4	UA	_	_
+6	en	en	DT	DT	UTR|SIN|IND	8	DT	_	_
+7	alkoholiserad	alkoholiserad	PC	PC	PRF|UTR|SIN|IND|NOM	8	AT	_	_
+8	gnom	gnom	NN	NN	UTR|SIN|IND|NOM	5	SP	_	_
+9	.	.	MAD	MAD	_	1	IP	_	_
+
+1	Erik	Erik	PM	PM	NOM	2	HD	_	_
+2	sa	säga	VB	VB	PRT|AKT	0	ROOT	_	_
+3	att	att	_	_	_	1	_	_	_
+4	Hampus	Hampus	PM	PM	NOM	2	AA	_	_
+5	är	vara	VB	VB	PRS|AKT	4	UA	_	_
+6	snäll	snäll	JJ	JJ	POS|UTR|SIN|IND|NOM	5	SP	_	_
+7	.	.	MAD	MAD	_	2	IP	_	_
+
