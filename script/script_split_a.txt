@@ -1,10 +1,17 @@
 # Split-a
+#A third split rule, which performs splitting for appositions.
+#The rule was triggered by an apposition (dependency label
+#AN) within commas.
 
-{   k form "," and .-> (n postag "NN" and -->. (an deprel "AN"))# and not $+ (p postag "KN" or postag "HP" or postag "HA")
-    ::
-    add "är" after node k; set postag n "X"; copy group n after node k;
+
+{    k form "," and .-> (n postag "NN" and -->. (an deprel "AN"))# and not $+ (p postag "KN" or postag "HP" or postag "HA")
+     ::
+     delete group an;
 }
-
+#{   k form "," and .-> (n postag "NN" and -->. (an deprel "AN"))# and not $+ (p postag "KN" or postag "HP" or postag "HA")
+#    ::
+#    add "är" after node k; set postag n "X"; copy group n after node k;
+#
 #{
     #k form "," and -->. (a postag "_") and $++ (n postag "X" and not $++ (n2 postag "X"))# and $++ (k2 form ",")
     #::
