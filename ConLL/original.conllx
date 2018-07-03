@@ -208,3 +208,13 @@
 6	räkningarna	räkning	NN	NN	UTR|PLU|DEF|NOM	7	SS	_	_
 7	betalades	betala	VB	VB	PRT|SFO	5	UA	_	_
 8	.	.	MAD	MAD	_	2	IP	_	_
+
+1	Riksbanken	riksbank	NN	NN	UTR|SIN|DEF|NOM	2	SS	_	_
+2	förväntas	förvänta	VB	VB	PRS|SFO	0	ROOT	_	_
+3	höja	höja	VB	VB	INF|AKT	2	VG	_	_
+4	rentan	rentan	NN	NN	UTR|PLU|IND|NOM	3	OO	_	_
+5	i	i	PP	PP	_	3	RA	_	_
+6	slutet	slut	NN	NN	NEU|SIN|DEF|NOM	5	PA	_	_
+7	av	av	PP	PP	_	6	ET	_	_
+8	året	år	NN	NN	NEU|SIN|DEF|NOM	7	PA	_	_
+9	.	.	MAD	MAD	_	2	IP	_	_

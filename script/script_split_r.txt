@@ -3,11 +3,29 @@
 #(POS-tag HP) in a nominal phrase.
 
 #Gör om en man som heter Ove - En man En man heter Ove. Skulle behöva få in en punkt samt göra om man-mannen
-{ hp postag "HP" and <--. (v postag "VB") and $- (n postag "NN" and .<-- (d postag "DT")) and not $-- (i deprel "IR" and $++ i2 deprel "JR")
-  ::
-  delete node hp; copy node n after node n; copy node d after node n;
+{   hp postag "HP" and <--. (v postag "VB") and $- (n postag "NN" and .<-- (d postag "DT") and feats "UTR|PLU|IND|NOM") and not $-- (i deprel "IR" and $++ i2 deprel "JR")
+    ::
+    delete node hp;  copy node n after node n; add "." after node n; copy node d after node n;
 }
 
+
+{   n deprel "ROOT" and .<-- (d deprel "DT") and $++ (n2 deprel "ROOT")
+    ::
+    add "." after node n;
+}
+
+{   p form "." and $+(p2 form ".") and $--(n deprel "ROOT" and .<-- (d deprel "DT") and $++ (n2 deprel "ROOT"))
+    ::
+    move node p after node n;
+
+}
+
+{   n deprel "ROOT" and .<-- (d deprel "DT") and $++ (n2 deprel "ROOT" and feats "UTR|PLU|IND|NOM")
+    ::
+    set form n2 "mössen";
+
+
+}
 {   hp postag "HP" and <--. (v postag "VB") and $- (k form "," and $- (n postag "NN")) and not $-- (i deprel "IR" and $++ i2 deprel "JR")
     ::
     delete node k;# copy node d after node n;#split before node hp and after group v;# after node n;
@@ -30,11 +48,15 @@
     ::
     split before node d and after group v;
 }
-
-
-{   hp postag "HP" and <--. (v postag "VB") and $- (n postag "NN") and not $-- (i deprel "IR" and $++ i2 deprel "JR")
+######De följande styckena förkortar en mening genom att flytta upp två verb, samt ta bort den "överflödiga" informationen. ###########
+{   hp postag "HP" and <--. (v postag "VB" and ->.(v2 postag "VB")) and $- (n postag "NN") and $+ (p postag "PM" and $+(p2 postag "PM"))
     ::
-    copy node n after node n;# copy node d after node n;#split before node hp and after group v;# after node n;
+    move node v after node p2; move node v2 after node p2;
+}
+
+{   v2 postag "VB" and <-.(v postag "VB" and .-->(n postag "NN") and $+(p postag "PP" and <--.(k postag "KN")))
+    ::
+    move node v2 after node v; delete group k;
 }
 
 {   hp postag "HP" and $- (n postag "NN" and $- (n2 postag "NN")) and <--. (v postag "VB")
@@ -42,9 +64,10 @@
     split before node n and after group v;
 }
 
+#Denna tar bort den relativa satsen i Det var under söndagen som Redoine Fraid med hjälp av en helikopter och tre kumpaner kunde fritas
 
 
-{   hp postag "HP" and <--. (v postag "VB") and $- (n postag "NN") and not $-- (i deprel "IR" and $++ i2 deprel "JR")
+{   hp postag "HP" and <--. (v postag "VB" and not ->.(v2 postag "VB")) and $- (n postag "NN") and not $-- (i deprel "IR" and $++ i2 deprel "JR")
     ::
     copy node n after node n;# copy node d after node n;#split before node hp and after group v;# after node n;
 }

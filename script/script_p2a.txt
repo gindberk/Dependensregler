@@ -79,7 +79,7 @@
     conj v pres; set feats v "PRS|AKTX";
 }
 
- 
+
 
 {
     v feats /sfo/gi and not > (pn postag "PN" or postag "PM") and not $- (o form "och" and .<-- (v2 postag "VB"))
@@ -128,12 +128,50 @@
     move node man after node h;
 }
 
-#flyttar man:et efter det roten om rotens postag = "VB"
+#flyttar man:et efter det roten om rotens postag = "VB" UPDATE: DENNA FÖRSTÖR FÖR ANDRA FÖRENKLINGAR. BEHÖVER KOMPLETERAS MED FLER VILLKOR
 {
     v feats /x/gi and -->. (man form "man" and postag "_") and $-- (p deprel "ROOT" and postag "VB")
     ::
     move node man after node p;
 }
+# Här går en mening från formen "X förväntas höja rentan i slutet av året" till "man förväntar sig att X höjer rentan i slutet av året"
+{
+    n postag "NN" and <-.(v postag "VB"and -->.(man form "man") and $+(v2 postag "VB"))
+    ::
+    copy node v before node n; delete node v2;
+}
+
+{
+    v  postag "VB" and deprel "ROOT" and $+ (n postag "NN" and deprel "SS") and $++(man form "man")
+    ::
+    move node man before node v; add "sig" before node n; add "att" after node n;
+
+}
+{
+    v  postag "VB" and deprel "ROOT" and $+ (n postag "NN" and deprel "SS") and $-(man form "man")
+    ::
+}
+
+{   s form "sig" and postag "_" and $+ (a form "att" and postag "_")  and $-- v  postag "VB" and deprel "ROOT" and $+ (n postag "NN" and deprel "SS") and $-(man form "man")
+    ::
+    move node s after node v; move node a after node n;
+
+}
+
+{
+    S form "sig" and postag "_" and $+(a form "att" and postag "_") and $++(v postag "VB" and ->.(n postag "NN" and deprel "OO"))
+    ::
+    conj v pres;
+}
+###################################################################################
+
+#Här vill jag flytta på man:et ifall meningsuppbyggnaden kräver det.
+
+#{   man form "man" and $-(v postag "VB" and deprel "ROOT") and $++(hp postag "HP") and <--.(v2 postag "VB" and $-(v3 postag "VB))
+#    ::
+#    delete node man;
+#}
+
 #byter plats på ett substantiv och ett verb om substantivet är SS och verbets förälder är en ROOT- funkar ej
 {
     n postag "NN" and deprel "SS" and $+(v postag "VB" and .-->(v2 deprel "ROOT"))
@@ -171,8 +209,8 @@
 
 }
 # om det finns två passiva verb i satsen, och de båda "man" har hamnat sist i meningen, flyttas de på plats
-#HÄR ÄR DU MAJA (note: denna regel behöver korrigeras, då den inte klarar av 2 passiva verb i en mening än )
-{   man form "man" and .-->(v postag "VB" and feats "SFO|INF") and $+ (man2 form "man" and .->(v2 postag "VB")) 
+# (note: denna regel behöver korrigeras, då den inte klarar av 2 passiva verb i en mening än )
+{   man form "man" and .-->(v postag "VB" and feats "SFO|INF") and $+ (man2 form "man" and .->(v2 postag "VB"))
     ::
     move node man before node v; move node man2 before node v2;
 
@@ -212,8 +250,8 @@
     move node ss after node v; move node m before node ss;
 }
 
-#Här vill jag byta plats på mannet så att det hamnar framför rätt verb, om det finns två verb i satsen, men bara ett är passivt. 
+#Här vill jag byta plats på mannet så att det hamnar framför rätt verb, om det finns två verb i satsen, men bara ett är passivt.
 {  v postag "VB" and deprel "ROOT" and feats "PRT|AKT" and .<- (n deprel "SS") and $+ (man form "man") and $++ (n2 postag "NN" and <-.(v2 postag "VB"))
    ::
-   move node v2 before node n2; delete node man; 
+   move node v2 before node n2; delete node man;
 }
