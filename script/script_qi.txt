@@ -4,6 +4,13 @@
     ::
     move node n before node v; add "att" after node v; move group n before node p;
 }
+
+{
+    v postag "VB" and deprel "ROOT" and ->.(ab postag "AB") and $--(p postag "PM" or postag "PN" and $+ (v2 postag "VB" and $+(a form "att" and postag "_")))
+    ::
+    move node ab before node v;
+
+}
 #ändrar formen x, säger KLas knutsson men fungerar inte än :(
 
 {   v postag "VB" and $- (k form ",") and $+ (n postag "PM" and $+ (n2 postag "PM" and $+ (s form "."))) and $-- (p form /.*[A-Ö].*/)

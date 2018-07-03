@@ -229,3 +229,57 @@
 11	året	år	NN	NN	NEU|SIN|DEF|NOM	10	PA	_	_
 12	.	.	MAD	MAD	_	0	IP	_	_
 
+1	De	den	DT	DT	UTR/NEU|PLU|DEF	3	DT	_	_
+2	första	första	RO	RO	NOM	3	DT	_	_
+3	husen	hus	NN	NN	NEU|PLU|DEF|NOM	4	SS	_	_
+4	ska	skola	VB	VB	PRS|AKT	0	ROOT	_	_
+5	man	man	_	_	_	6	_	_	_
+6	bygga	bygga	VB	VB	PRS|AKTX	4	VG	_	_
+7	i	i	PP	PP	_	6	RA	_	_
+8	Stadshagen	Stadshagen	PM	PM	NOM	7	PA	_	_
+9	på	på	PP	PP	_	8	RA	_	_
+10	Kungsholmen	Kungsholmen	PM	PM	NOM	9	PA	_	_
+11	i	i	PP	PP	_	10	RA	_	_
+12	Stockholm	Stockholm	PM	PM	NOM	11	PA	_	_
+13	.	.	MAD	MAD	_	4	IP	_	_
+
+1	När	när	HA	HA	_	4	TA	_	_
+2	man	man	_	_	_	4	_	_	_
+3	idén	idé	NN	NN	UTR|SIN|DEF|NOM	4	SS	_	_
+4	la	lägga	VB	VB	PRT|AKTX	8	TA	_	_
+5	fram	fram	PL	PL	_	4	PL	_	_
+6	på	på	PP	PP	_	4	RA	_	_
+7	bordet	bord	NN	NN	NEU|SIN|DEF|NOM	6	PA	_	_
+8	upplevde	uppleva	VB	VB	PRT|AKT	0	ROOT	_	_
+9	hon	hon	PN	PN	UTR|SIN|DEF|SUB	8	FS	_	_
+10	att	att	SN	SN	_	8	ES	_	_
+11	det	det	PN	PN	NEU|SIN|DEF|SUB/OBJ	12	SS	_	_
+12	fanns	finnas	VB	VB	AKTX	10	UA	_	_
+13	ett	en	DT	DT	NEU|SIN|IND	14	DT	_	_
+14	motstånd	motstånd	NN	NN	NEU|SIN|IND|NOM	12	OO	_	_
+15	mot	mot	PP	PP	_	14	ET	_	_
+16	projektet	projekt	NN	NN	NEU|SIN|DEF|NOM	15	PA	_	_
+17	i	i	PP	PP	_	16	ET	_	_
+18	branschen	bransch	NN	NN	UTR|SIN|DEF|NOM	17	PA	_	_
+19	.	.	MAD	MAD	_	8	IP	_	_
+
+1	När	när	HA	HA	_	3	TA	_	_
+2	man	man	_	_	_	3	_	_	_
+3	la	lägga	VB	VB	PRT|AKTX	8	TA	_	_
+4	idén	idé	NN	NN	UTR|SIN|DEF|NOM	3	SS	_	_
+5	fram	fram	PL	PL	_	3	PL	_	_
+6	på	på	PP	PP	_	3	RA	_	_
+7	bordet	bord	NN	NN	NEU|SIN|DEF|NOM	6	PA	_	_
+8	upplevde	uppleva	VB	VB	PRT|AKT	0	ROOT	_	_
+9	hon	hon	PN	PN	UTR|SIN|DEF|SUB	8	FS	_	_
+10	att	att	SN	SN	_	8	ES	_	_
+11	det	det	PN	PN	NEU|SIN|DEF|SUB/OBJ	12	SS	_	_
+12	fanns	finnas	VB	VB	AKTX	10	UA	_	_
+13	ett	en	DT	DT	NEU|SIN|IND	14	DT	_	_
+14	motstånd	motstånd	NN	NN	NEU|SIN|IND|NOM	12	OO	_	_
+15	mot	mot	PP	PP	_	14	ET	_	_
+16	projektet	projekt	NN	NN	NEU|SIN|DEF|NOM	15	PA	_	_
+17	i	i	PP	PP	_	16	ET	_	_
+18	branschen	bransch	NN	NN	UTR|SIN|DEF|NOM	17	PA	_	_
+19	.	.	MAD	MAD	_	8	IP	_	_
+

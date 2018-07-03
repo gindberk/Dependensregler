@@ -128,7 +128,13 @@
     move node man after node h;
 }
 
-#flyttar man:et efter det roten om rotens postag = "VB" UPDATE: DENNA FÖRSTÖR FÖR ANDRA FÖRENKLINGAR. BEHÖVER KOMPLETERAS MED FLER VILLKOR
+{ v feats /x/gi and postag "VB" and .<-(n postag "NN"and $-(man form "man" and postag "_"))
+  ::
+  move node v before node n;
+
+
+}
+#flyttar man:et efter det roten om rotens postag =
 {
     v feats /x/gi and -->. (man form "man" and postag "_") and $-- (p deprel "ROOT" and postag "VB")
     ::
