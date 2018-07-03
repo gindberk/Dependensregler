@@ -1,8 +1,27 @@
 # Quotation Inversion
 #ändrar formen "x, förklarar Pelle" - pelle förklarar att x####################
-{   v postag "VB" and $- (k form ",") and $+ (n postag "PM" and $+ (s form ".")) and $-- (p form /.*[A-Ö].*/)
+#komplicerade meningar
+{   v postag "VB" and $- (k form ",") and $+ (n postag "PM" and $+ (s form ".")) and $-- (p form /.*[A-Ö].*/) and $-- (e postag "NN")
     ::
-    move node n before node v; add "att" after node v; move group n before node p;
+    add "att" after node v; move node n before node v;
+}
+{   v postag "VB" and $- (k form ",") and $+ (n postag "PM" and $+ (s form ".")) and $-- (p form /.*[A-Ö].*/) and $-- (e postag "NN" and $+ (q postag "PP"))
+    ::
+    add "att" after node v; move node v after node n;
+}
+
+#Enkla meningar
+{   v postag "VB" and $- (k form ",") and $+ (n postag "PM" and $+ (s form ".")) and $-- (p form /.*[A-Ö].*/) and not $-- (e postag "NN")
+    ::
+    move node n before node v; add "att" after node v;
+}
+{   n postag "PM" and $+ (v postag "VB") and $++(a form "att") and $-- (p form /.*[A-Ö].*/)
+    ::
+    move node n before node p; move node a after node p;
+}
+{   v postag "VB" and $- (k form ",") and $+ (d form ".") and $-- (s form /.*[A-Ö].*/)
+    ::
+    move node v after node s;
 }
 #ändrar formen x, säger KLas knutsson men fungerar inte än :(
 
@@ -60,9 +79,8 @@
     set form k ",";
 }
 
-### Fuckar med split k
 {
     p form "." and $+ (x not form /\"/)
     ::
     delete node p;
-}
+ }
