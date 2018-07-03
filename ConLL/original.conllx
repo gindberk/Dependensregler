@@ -281,3 +281,16 @@
 9	enligt	enligt	PP	PP	_	7	AN	_	_
 10	migrationsverket	migrationsverk	NN	NN	NEU|SIN|DEF|NOM	9	PA	_	_
 11	.	.	MAD	MAD	_	2	IP	_	_
+
+1	Maten	mat	NN	NN	UTR|SIN|DEF|NOM	2	SS	_	_
+2	äts	äta	VB	VB	PRS|SFO	0	ROOT	_	_
+3	av	av	PP	PP	_	2	AG	_	_
+4	Maja	Maja	PM	PM	NOM	3	PA	_	_
+5	.	.	MAD	MAD	_	2	IP	_	_
+
+1	Maten	mat	NN	NN	UTR|SIN|DEF|NOM	2	SS	_	_
+2	blir	bli	VB	VB	PRS|AKT	0	ROOT	_	_
+3	äten	äta	PC	PC	PRF|UTR|SIN|IND|NOM	2	SP	_	_
+4	av	av	PP	PP	_	2	RA	_	_
+5	Maja	Maja	PM	PM	NOM	4	PA	_	_
+6	.	.	MAD	MAD	_	2	IP	_	_

@@ -292,3 +292,13 @@
 7	året	år	NN	NN	NEU|SIN|DEF|NOM	2	SP	_	_
 8	.	.	MAD	MAD	_	2	IP	_	_
 
+1	Maja	Maja	PM	PM	NOM	2	PA	_	_
+2	äter	äta	VB	VB	AKT	0	ROOT	_	_
+3	Maten	mat	NN	NN	UTR|SIN|DEF|NOM	2	SS	_	_
+4	.	.	MAD	MAD	_	2	IP	_	_
+
+1	Maja	Maja	PM	PM	NOM	0	PA	_	_
+2	äter	äta	PC	PC	PRF|UTR|SIN|IND|NOM	0	SP	_	_
+3	Maten	mat	NN	NN	UTR|SIN|DEF|NOM	0	SS	_	_
+4	.	.	MAD	MAD	_	0	IP	_	_
+

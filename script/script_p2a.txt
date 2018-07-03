@@ -1,5 +1,19 @@
 # Passive to active
 
+
+#Här vill jag göra det möjligt att skriva om en mening i formen "maten blir äten av x" till "x äter maten"
+
+{
+    n postag "NN" and deprel "SS" and <-. (v postag "VB" and deprel "ROOT" and ->.(pc postag "PC" and $+ (pp postag "PP" and $+(pm postag "PM" or postag "PN"))))
+    ::
+    conj pc pres; move node pc before node n; move node pm before node n; delete node pm; delete node pp;
+}
+
+
+
+
+
+
 {
     v feats "PRS|SFO" and $++ (av form "av" and deprel "AG" and > (pa deprel "PA")) and > (s deprel "SS" or deprel "OO" and postag "NN")
     ::
