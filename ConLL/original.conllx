@@ -301,3 +301,11 @@
 4	flera	flera	JJ	JJ	POS|UTR/NEU|PLU|IND|NOM	5	AT	_	_
 5	klassiker	klassiker	NN	NN	UTR|PLU|IND|NOM	3	SS	_	_
 6	.	.	MAD	MAD	_	3	IP	_	_
+
+1	Den	den	DT	DT	UTR|SIN|DEF	3	DT	_	_
+2	magnifika	magnifik	JJ	JJ	POS|UTR/NEU|SIN|DEF|NOM	3	AT	_	_
+3	tårtan	tårta	NN	NN	UTR|SIN|DEF|NOM	0	ROOT	_	_
+4	äts	äta	VB	VB	PRS|SFO	3	VG	_	_
+5	av	av	PP	PP	_	4	RA	_	_
+6	Maja	Maja	PM	PM	NOM	5	PA	_	_
+7	.	.	MAD	MAD	_	3	IP	_	_

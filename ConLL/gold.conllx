@@ -310,3 +310,10 @@
 6	klassiker	klassiker	NN	NN	UTR|PLU|IND|NOM	3	SS	_	_
 7	.	.	MAD	MAD	_	3	IP	_	_
 
+1	Maja	Maja	PM	PM	NOM	2	PA	_	_
+2	äter	äta	VB	VB	PRS|AKTX	5	VG	_	_
+3	Den	den	DT	DT	UTR|SIN|DEF	5	DT	_	_
+4	magnifika	magnifik	JJ	JJ	POS|UTR/NEU|SIN|DEF|NOM	5	AT	_	_
+5	tårtan	tårta	NN	NN	UTR|SIN|DEF|NOM	0	ROOT	_	_
+6	.	.	MAD	MAD	_	5	IP	_	_
+

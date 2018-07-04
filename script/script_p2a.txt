@@ -2,16 +2,20 @@
 
 
 #Här vill jag göra det möjligt att skriva om en mening i formen "maten blir äten av x" till "x äter maten"
-
+#Fungerar enbart på meningar med den specifika syntaxen, ska försöka lösa detta
 {
     n postag "NN" and deprel "SS" and <-. (v postag "VB" and deprel "ROOT" and ->.(pc postag "PC" and $+ (pp postag "PP" and $+(pm postag "PM" or postag "PN"))))
     ::
     conj pc pres; move node pc before node n; move node pm before node n; delete node pm; delete node pp;
 }
 
-
-
-
+#Här vill jag göra det möjligt att skriva om en mening i formen : "Den magnifika tårtan äts av X" till "X äter den magnifika tårtan"
+#Fungerar förutom att en senare funktion verkar lägga till ett "Man"
+{
+    n postag "NN" and deprel "ROOT" and ->.(v postag "VB"  and ->.(pp postag "PP")) and $++(name postag "PN" or postag "PM") and $--(dt postag "DT" and not $-(x) )
+    ::
+    move node name before node dt; move node pp after node dt; delete node name;
+}
 
 
 {
@@ -100,14 +104,19 @@
     ::
     conj v pres; set feats v "PRS|AKTX"; add "man" after node v;
 }
-#denna adderar ordet "man" sist i meningen
+#denna adderar ordet "man" sist i meningen om det inte finns ett namn eller posisivt pronomen till till vänster om sitt huvudverb.
 
 {
-    v feats /sfo/gi
+    v feats /sfo/gi and not .<- (pm postag "PM" or postag "PN")
     ::
     conj v pres; set feats v "PRS|AKTX"; add "man" after node v;
 }
 
+{
+    v feats /sfo/gi and .<- (pm postag "PM" or postag "PN")
+    ::
+    conj v pres; set feats v "PRS|AKTX";
+}
 
 
 {
