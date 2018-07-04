@@ -294,7 +294,14 @@
 
 #Här vill jag göra så att en mening med ett objekt och fler än en handling fungerar. Ex. "Maten äts och serveras" till "man äter och serverar maten"
 
-{  n postag "NN" and $++(kn postag "KN" and deprel "ROOT" and ->.(v postag "VB") and .<-(v2 postag "VB")) and $++ (man form "man" and postag "_")
+{  n postag "NN" and not $++(pp postag "PP") and $++(kn postag "KN" and deprel "ROOT" and ->.(v postag "VB") and .<-(v2 postag "VB")) and $++ (man form "man" and postag "_")
    ::
    conj v pres; move node man before node n; move node v2 after node man;
+}
+
+
+{  
+   n postag "NN" and $++(pp postag "PP") and $++(kn postag "KN" and deprel "ROOT" and ->.(v postag "VB") and .<-(v2 postag "VB")) and $++ (man form "man" and postag "_")
+   ::
+   conj v pres; move node n after node v; delete node man; move group pp before node n; delete node n; 
 }

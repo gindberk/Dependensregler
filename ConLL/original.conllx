@@ -384,3 +384,12 @@
 3	och	och	KN	KN	_	0	ROOT	_	_
 4	äts	äta	VB	VB	PRS|SFO	3	+F	_	_
 5	.	.	MAD	MAD	_	3	IP	_	_
+
+1	Maten	mat	NN	NN	UTR|SIN|DEF|NOM	2	SS	_	_
+2	serveras	servera	VB	VB	PRS|SFO	3	MS	_	_
+3	och	och	KN	KN	_	0	ROOT	_	_
+4	äts	äta	VB	VB	PRS|SFO	3	+F	_	_
+5	av	av	PP	PP	_	4	OA	_	_
+6	hungriga	hungrig	JJ	JJ	POS|UTR/NEU|PLU|IND/DEF|NOM	7	AT	_	_
+7	människor	människa	NN	NN	UTR|PLU|IND|NOM	5	PA	_	_
+8	.	.	MAD	MAD	_	3	IP	_	_
