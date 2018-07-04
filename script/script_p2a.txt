@@ -148,11 +148,18 @@
 
 
 }
-#flyttar man:et efter det roten om rotens postag =
+#flyttar man:et efter det roten om rotens postag = VB och det finns en nod med formen AKTX
 {
     v feats /x/gi and -->. (man form "man" and postag "_") and $-- (p deprel "ROOT" and postag "VB")
     ::
     move node man after node p;
+}
+
+#Flyttar man:et efter roten, om rotens postag = VB och roten har ett barn till höger vilket är ett substantiv.
+{
+    v feats /x/gi and -->. (man form "man" and postag "_") and -->. (n postag "NN" )
+    ::
+    move node man after node v;
 }
 # Här går en mening från formen "X förväntas höja rentan i slutet av året" till "man förväntar sig att X höjer rentan i slutet av året"
 {

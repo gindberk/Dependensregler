@@ -302,3 +302,11 @@
 3	Maten	mat	NN	NN	UTR|SIN|DEF|NOM	0	SS	_	_
 4	.	.	MAD	MAD	_	0	IP	_	_
 
+1	Under	under	PP	PP	_	3	TA	_	_
+2	premiärveckan	premiärveckan	NN	NN	UTR|PLU|IND|NOM	1	PA	_	_
+3	visar	visa	VB	VB	PRS|AKTX	0	ROOT	_	_
+4	man	man	_	_	_	3	_	_	_
+5	flera	flera	JJ	JJ	POS|UTR/NEU|PLU|IND|NOM	6	AT	_	_
+6	klassiker	klassiker	NN	NN	UTR|PLU|IND|NOM	3	SS	_	_
+7	.	.	MAD	MAD	_	3	IP	_	_
+

@@ -294,3 +294,10 @@
 4	av	av	PP	PP	_	2	RA	_	_
 5	Maja	Maja	PM	PM	NOM	4	PA	_	_
 6	.	.	MAD	MAD	_	2	IP	_	_
+
+1	Under	under	PP	PP	_	3	TA	_	_
+2	premiärveckan	premiärveckan	NN	NN	UTR|PLU|IND|NOM	1	PA	_	_
+3	visas	visa	VB	VB	PRS|SFO	0	ROOT	_	_
+4	flera	flera	JJ	JJ	POS|UTR/NEU|PLU|IND|NOM	5	AT	_	_
+5	klassiker	klassiker	NN	NN	UTR|PLU|IND|NOM	3	SS	_	_
+6	.	.	MAD	MAD	_	3	IP	_	_
