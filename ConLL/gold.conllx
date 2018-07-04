@@ -257,3 +257,18 @@
 6	snäll	snäll	JJ	JJ	POS|UTR|SIN|IND|NOM	5	SP	_	_
 7	.	.	MAD	MAD	_	2	IP	_	_
 
+1	Erik	Erik	PM	PM	NOM	3	CJ	_	_
+2	Kindberg	Kindberg	PM	PM	NOM	1	HD	_	_
+3	sa	säga	VB	VB	PRT|AKT	6	PA	_	_
+4	att	att	_	_	_	1	_	_	_
+5	Maja	Maja	PM	PM	NOM	0	ROOT	_	_
+6	är	vara	VB	VB	PRS|AKT	5	VG	_	_
+7	en	en	DT	DT	UTR|SIN|IND	9	DT	_	_
+8	tjuvaktig	tjuvaktig	JJ	JJ	POS|UTR|SIN|IND|NOM	9	AT	_	_
+9	alv	alv	NN	NN	UTR|SIN|IND|NOM	12	CJ	_	_
+10	med	med	PP	PP	_	9	ET	_	_
+11	slängkappa	slängkappa	NN	NN	UTR|SIN|IND|NOM	10	PA	_	_
+12	och	och	KN	KN	_	5	AN	_	_
+13	förgiftade	förgifta	PC	PC	PRF|UTR/NEU|PLU|IND/DEF|NOM	14	AT	_	_
+14	dolkar	dolk	NN	NN	UTR|PLU|IND|NOM	12	CJ	_	_
+15	.	.	MAD	MAD	_	5	IP	_	_
