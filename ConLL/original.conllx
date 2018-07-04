@@ -17,7 +17,6 @@
 17	Sundstrand	Sundstrand	PM	PM	NOM	16	HD	_	_
 18	.	.	MAD	MAD	_	2	IP	_	_
 
-
 1	Först	först	AB	AB	_	2	TA	_	_
 2	följer	följa	VB	VB	PRS|AKT	0	ROOT	_	_
 3	pedagogen	pedagog	NN	NN	UTR|SIN|DEF|NOM	4	DT	_	_
@@ -200,6 +199,7 @@
 9	slängas	slänga	VB	VB	INF|SFO	8	VG	_	_
 10	.	.	MAD	MAD	_	3	IP	_	_
 
+<<<<<<< HEAD
 1	Katja	Katja	PM	PM	NOM	2	SS	_	_
 2	skulle	skola	VB	VB	PRT|AKT	0	ROOT	_	_
 3	se	se	VB	VB	INF|AKT	2	VG	_	_
@@ -309,3 +309,74 @@
 5	av	av	PP	PP	_	4	RA	_	_
 6	Maja	Maja	PM	PM	NOM	5	PA	_	_
 7	.	.	MAD	MAD	_	3	IP	_	_
+=======
+1	Jag	jag	PN	PN	UTR|SIN|DEF|SUB	2	SS	_	_
+2	har	ha	VB	VB	PRS|AKT	0	ROOT	_	_
+3	en	en	DT	DT	UTR|SIN|IND	4	DT	_	_
+4	mört	mört	NN	NN	UTR|SIN|IND|NOM	6	CJ	_	_
+5	,	,	MID	MID	_	6	IK	_	_
+6	och	och	KN	KN	_	2	OO	_	_
+7	den	den	PN	PN	UTR|SIN|DEF|SUB/OBJ	8	SS	_	_
+8	gillar	gilla	VB	VB	PRS|AKT	6	CJ	_	_
+9	korv	korv	NN	NN	UTR|SIN|IND|NOM	8	OO	_	_
+10	.	.	MAD	MAD	_	2	IP	_	_
+
+1	Jag	jag	PN	PN	UTR|SIN|DEF|SUB	2	SS	_	_
+2	har	ha	VB	VB	PRS|AKT	0	ROOT	_	_
+3	en	en	DT	DT	UTR|SIN|IND	4	DT	_	_
+4	bil	bil	NN	NN	UTR|SIN|IND|NOM	2	OO	_	_
+5	,	,	MID	MID	_	4	IK	_	_
+6	men	men	KN	KN	_	4	ET	_	_
+7	utan	utan	PP	PP	_	6	UA	_	_
+8	fälgar	fälg	NN	NN	UTR|PLU|IND|NOM	7	PA	_	_
+9	.	.	MAD	MAD	_	2	IP	_	_
+
+1	Hampus	Hampus	PM	PM	NOM	11	AA	_	_
+2	är	vara	VB	VB	PRS|AKT	1	IF	_	_
+3	en	en	DT	DT	UTR|SIN|IND	5	DT	_	_
+4	alkoholiserad	alkoholiserad	PC	PC	PRF|UTR|SIN|IND|NOM	5	AT	_	_
+5	gnom	gnom	NN	NN	UTR|SIN|IND|NOM	2	SP	_	_
+6	med	med	PP	PP	_	5	ET	_	_
+7	ögonlapp	ögonlapp	NN	NN	UTR|PLU|IND|NOM	8	CJ	_	_
+8	och	och	KN	KN	_	6	PA	_	_
+9	rövsvett	rövsvett	RG	RG	NOM	8	CJ	_	_
+10	,	,	MID	MID	_	11	IK	_	_
+11	sa	säga	VB	VB	PRT|AKT	0	ROOT	_	_
+12	Erik	Erik	PM	PM	NOM	11	HD	_	_
+13	.	.	MAD	MAD	_	11	IP	_	_
+
+1	Hampus	Hampus	PM	PM	NOM	0	ROOT	_	_
+2	är	vara	VB	VB	PRS|AKT	1	UA	_	_
+3	en	en	DT	DT	UTR|SIN|IND	5	DT	_	_
+4	alkoholiserad	alkoholiserad	PC	PC	PRF|UTR|SIN|IND|NOM	5	AT	_	_
+5	gnom	gnom	NN	NN	UTR|SIN|IND|NOM	2	SP	_	_
+6	,	,	MID	MID	_	5	IK	_	_
+7	sa	säga	VB	VB	PRT|AKT	8	JC	_	_
+8	Erik	Erik	PM	PM	NOM	5	RA	_	_
+9	.	.	MAD	MAD	_	8	IP	_	_
+
+1	Hampus	Hampus	PM	PM	NOM	5	AA	_	_
+2	är	vara	VB	VB	PRS|AKT	1	UA	_	_
+3	snäll	snäll	JJ	JJ	POS|UTR|SIN|IND|NOM	2	SP	_	_
+4	,	,	MID	MID	_	5	IK	_	_
+5	sa	säga	VB	VB	PRT|AKT	0	ROOT	_	_
+6	Erik	Erik	PM	PM	NOM	5	HD	_	_
+7	.	.	MAD	MAD	_	5	IP	_	_
+
+1	Maja	Maja	PM	PM	NOM	0	ROOT	_	_
+2	är	vara	VB	VB	PRS|AKT	1	VG	_	_
+3	en	en	DT	DT	UTR|SIN|IND	5	DT	_	_
+4	tjuvaktig	tjuvaktig	JJ	JJ	POS|UTR|SIN|IND|NOM	5	AT	_	_
+5	alv	alv	NN	NN	UTR|SIN|IND|NOM	8	CJ	_	_
+6	med	med	PP	PP	_	5	ET	_	_
+7	slängkappa	slängkappa	NN	NN	UTR|SIN|IND|NOM	6	PA	_	_
+8	och	och	KN	KN	_	1	AN	_	_
+9	förgiftade	förgifta	PC	PC	PRF|UTR/NEU|PLU|IND/DEF|NOM	10	AT	_	_
+10	dolkar	dolk	NN	NN	UTR|PLU|IND|NOM	8	CJ	_	_
+11	,	,	MID	MID	_	12	IK	_	_
+12	sa	säga	VB	VB	PRT|AKT	2	PA	_	_
+13	Erik	Erik	PM	PM	NOM	12	CJ	_	_
+14	Kindberg	Kindberg	PM	PM	NOM	13	HD	_	_
+15	.	.	MAD	MAD	_	1	IP	_	_
+
+>>>>>>> 8f212287eb16717da1c2b61d123612f533a5407d
