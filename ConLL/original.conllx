@@ -251,3 +251,19 @@
 5	sa	säga	VB	VB	PRT|AKT	0	ROOT	_	_
 6	Erik	Erik	PM	PM	NOM	5	HD	_	_
 7	.	.	MAD	MAD	_	5	IP	_	_
+
+1	Maja	Maja	PM	PM	NOM	0	ROOT	_	_
+2	är	vara	VB	VB	PRS|AKT	1	VG	_	_
+3	en	en	DT	DT	UTR|SIN|IND	5	DT	_	_
+4	tjuvaktig	tjuvaktig	JJ	JJ	POS|UTR|SIN|IND|NOM	5	AT	_	_
+5	alv	alv	NN	NN	UTR|SIN|IND|NOM	8	CJ	_	_
+6	med	med	PP	PP	_	5	ET	_	_
+7	slängkappa	slängkappa	NN	NN	UTR|SIN|IND|NOM	6	PA	_	_
+8	och	och	KN	KN	_	1	AN	_	_
+9	förgiftade	förgifta	PC	PC	PRF|UTR/NEU|PLU|IND/DEF|NOM	10	AT	_	_
+10	dolkar	dolk	NN	NN	UTR|PLU|IND|NOM	8	CJ	_	_
+11	,	,	MID	MID	_	12	IK	_	_
+12	sa	säga	VB	VB	PRT|AKT	2	PA	_	_
+13	Erik	Erik	PM	PM	NOM	12	CJ	_	_
+14	Kindberg	Kindberg	PM	PM	NOM	13	HD	_	_
+15	.	.	MAD	MAD	_	1	IP	_	_
