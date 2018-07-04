@@ -199,7 +199,6 @@
 9	slängas	slänga	VB	VB	INF|SFO	8	VG	_	_
 10	.	.	MAD	MAD	_	3	IP	_	_
 
-<<<<<<< HEAD
 1	Katja	Katja	PM	PM	NOM	2	SS	_	_
 2	skulle	skola	VB	VB	PRT|AKT	0	ROOT	_	_
 3	se	se	VB	VB	INF|AKT	2	VG	_	_
@@ -309,7 +308,7 @@
 5	av	av	PP	PP	_	4	RA	_	_
 6	Maja	Maja	PM	PM	NOM	5	PA	_	_
 7	.	.	MAD	MAD	_	3	IP	_	_
-=======
+
 1	Jag	jag	PN	PN	UTR|SIN|DEF|SUB	2	SS	_	_
 2	har	ha	VB	VB	PRS|AKT	0	ROOT	_	_
 3	en	en	DT	DT	UTR|SIN|IND	4	DT	_	_
@@ -379,4 +378,9 @@
 14	Kindberg	Kindberg	PM	PM	NOM	13	HD	_	_
 15	.	.	MAD	MAD	_	1	IP	_	_
 
->>>>>>> 8f212287eb16717da1c2b61d123612f533a5407d
+
+1	Maten	mat	NN	NN	UTR|SIN|DEF|NOM	2	SS	_	_
+2	serveras	servera	VB	VB	PRS|SFO	3	MS	_	_
+3	och	och	KN	KN	_	0	ROOT	_	_
+4	äts	äta	VB	VB	PRS|SFO	3	+F	_	_
+5	.	.	MAD	MAD	_	3	IP	_	_

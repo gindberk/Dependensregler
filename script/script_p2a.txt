@@ -10,7 +10,7 @@
 }
 
 #Här vill jag göra det möjligt att skriva om en mening i formen : "Den magnifika tårtan äts av X" till "X äter den magnifika tårtan"
-#Fungerar förutom att en senare funktion verkar lägga till ett "Man"
+
 {
     n postag "NN" and deprel "ROOT" and ->.(v postag "VB"  and ->.(pp postag "PP")) and $++(name postag "PN" or postag "PM") and $--(dt postag "DT" and not $-(x) )
     ::
@@ -111,7 +111,7 @@
     ::
     conj v pres; set feats v "PRS|AKTX"; add "man" after node v;
 }
-
+#denna byter form på verbet så att det fungerar i meningen "Subjekt verb adjektiv objekt"
 {
     v feats /sfo/gi and .<- (pm postag "PM" or postag "PN")
     ::
@@ -290,4 +290,11 @@
 {  v postag "VB" and deprel "ROOT" and feats "PRT|AKT" and .<- (n deprel "SS") and $+ (man form "man") and $++ (n2 postag "NN" and <-.(v2 postag "VB"))
    ::
    move node v2 before node n2; delete node man;
+}
+
+#Här vill jag göra så att en mening med ett objekt och fler än en handling fungerar. Ex. "Maten äts och serveras" till "man äter och serverar maten"
+
+{  n postag "NN" and $++(kn postag "KN" and deprel "ROOT" and ->.(v postag "VB") and .<-(v2 postag "VB")) and $++ (man form "man" and postag "_")
+   ::
+   conj v pres; move node man before node n; move node v2 after node man;
 }
