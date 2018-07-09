@@ -526,3 +526,18 @@
 6	sa	säga	VB	VB	PRT|AKT	4	ET	_	_
 7	hon	hon	PN	PN	UTR|SIN|DEF|SUB	6	SS	_	_
 8	.	.	MAD	MAD	_	2	IP	_	_
+
+1	Här	här	AB	AB	_	2	RA	_	_
+2	kommer	komma	VB	VB	PRS|AKT	0	ROOT	_	_
+3	konditionsträning	konditionsträning	NN	NN	UTR|SIN|IND|NOM	2	SS	_	_
+4	in	in	AB	AB	_	5	CA	_	_
+5	i	i	PP	PP	_	2	TA	_	_
+6	bilden	bild	NN	NN	UTR|SIN|DEF|NOM	5	PA	_	_
+7	.	.	MAD	MAD	_	2	IP	_	_
+
+1	Bitvis	bitvis	AB	AB	_	2	RA	_	_
+2	är	vara	VB	VB	PRS|AKT	0	ROOT	_	_
+3	stenbeläggningen	stenbeläggningen	NN	NN	UTR|PLU|IND|NOM	2	SS	_	_
+4	helt	helt	AB	AB	POS	5	AA	_	_
+5	borta	borta	AB	AB	_	2	SP	_	_
+6	.	.	MAD	MAD	_	2	IP	_	_
