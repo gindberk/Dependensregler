@@ -541,3 +541,70 @@
 4	helt	helt	AB	AB	POS	5	AA	_	_
 5	borta	borta	AB	AB	_	2	SP	_	_
 6	.	.	MAD	MAD	_	2	IP	_	_
+
+1	Riksbanken	riksbank	NN	NN	UTR|SIN|DEF|NOM	2	SS	_	_
+2	förväntas	förvänta	VB	VB	PRS|SFO	0	ROOT	_	_
+3	höja	höja	VB	VB	INF|AKT	2	VG	_	_
+4	rentan	rentan	NN	NN	UTR|PLU|IND|NOM	3	OO	_	_
+5	i	i	PP	PP	_	3	RA	_	_
+6	slutet	slut	NN	NN	NEU|SIN|DEF|NOM	5	PA	_	_
+7	av	av	PP	PP	_	6	ET	_	_
+8	året	år	NN	NN	NEU|SIN|DEF|NOM	7	PA	_	_
+9	.	.	MAD	MAD	_	2	IP	_	_
+
+1	Branden	brand	NN	NN	UTR|SIN|DEF|NOM	2	SS	_	_
+2	anlades	anlägga	VB	VB	PRT|SFO	0	ROOT	_	_
+3	av	av	PP	PP	_	2	AG	_	_
+4	Maja	Maja	PM	PM	NOM	3	PA	_	_
+5	.	.	MAD	MAD	_	2	IP	_	_
+
+1	Tårtan	tårta	NN	NN	UTR|SIN|DEF|NOM	2	CJ	_	_
+2	och	och	KN	KN	_	4	SS	_	_
+3	kakorna	kaka	NN	NN	UTR|PLU|DEF|NOM	2	CJ	_	_
+4	bakades	baka	VB	VB	PRT|SFO	0	ROOT	_	_
+5	av	av	PP	PP	_	4	AG	_	_
+6	Ernst	Ernst	PM	PM	NOM	5	PA	_	_
+7	Kirshteiger	Kirshteiger	PM	PM	NOM	6	HD	_	_
+8	.	.	MAD	MAD	_	4	IP	_	_
+
+1	Jobbet	jobb	NN	NN	NEU|SIN|DEF|NOM	2	SS	_	_
+2	gjordes	göra	VB	VB	PRT|SFO	0	ROOT	_	_
+3	av	av	PP	PP	_	2	AG	_	_
+4	arbetaren	arbetare	NN	NN	UTR|SIN|DEF|NOM	3	PA	_	_
+5	.	.	MAD	MAD	_	2	IP	_	_
+
+1	Boken	bok	NN	NN	UTR|SIN|DEF|NOM	2	SS	_	_
+2	skrevs	skriva	VB	VB	PRT|SFO	0	ROOT	_	_
+3	av	av	PP	PP	_	2	AG	_	_
+4	den	den	DT	DT	UTR|SIN|DEF	6	DT	_	_
+5	galne	galen	JJ	JJ	POS|MAS|SIN|DEF|NOM	6	AT	_	_
+6	författaren	författare	NN	NN	UTR|SIN|DEF|NOM	3	PA	_	_
+7	.	.	MAD	MAD	_	2	IP	_	_
+
+1	Boken	bok	NN	NN	UTR|SIN|DEF|NOM	2	SS	_	_
+2	skrevs	skriva	VB	VB	PRT|SFO	0	ROOT	_	_
+3	av	av	PP	PP	_	2	AG	_	_
+4	Erik	Erik	PM	PM	NOM	3	PA	_	_
+5	.	.	MAD	MAD	_	2	IP	_	_
+
+1	Maten	mat	NN	NN	UTR|SIN|DEF|NOM	2	SS	_	_
+2	serveras	servera	VB	VB	PRS|SFO	3	MS	_	_
+3	och	och	KN	KN	_	0	ROOT	_	_
+4	äts	äta	VB	VB	PRS|SFO	3	+F	_	_
+5	.	.	MAD	MAD	_	3	IP	_	_
+
+1	Maten	mat	NN	NN	UTR|SIN|DEF|NOM	2	SS	_	_
+2	serveras	servera	VB	VB	PRS|SFO	3	MS	_	_
+3	och	och	KN	KN	_	0	ROOT	_	_
+4	äts	äta	VB	VB	PRS|SFO	3	+F	_	_
+5	av	av	PP	PP	_	4	OA	_	_
+6	hungriga	hungrig	JJ	JJ	POS|UTR/NEU|PLU|IND/DEF|NOM	7	AT	_	_
+7	människor	människa	NN	NN	UTR|PLU|IND|NOM	5	PA	_	_
+8	.	.	MAD	MAD	_	3	IP	_	_
+
+1	Tårtan	tårta	NN	NN	UTR|SIN|DEF|NOM	2	SS	_	_
+2	bakades	baka	VB	VB	PRT|SFO	0	ROOT	_	_
+3	av	av	PP	PP	_	2	AG	_	_
+4	Edward	Edward	PM	PM	NOM	3	PA	_	_
+5	Blom	Blom	PM	PM	NOM	4	HD	_	_
+6	.	.	MAD	MAD	_	2	IP	_	_
