@@ -6,26 +6,30 @@
     set form n "du"; set form pn "dig";
 }
 
-{
-    n lemma "sin" and postag "PS" and $-- (pn lemma "man" and postag "PN")
-    ::
-    set form n "din"; set lemma n "din"; set form pn "du";
-}
 
 {
-    n lemma "man" and postag "PN" and .--> (v postag "VB")
+    n lemma "man" and postag "PN" and deprel "SS" and  $-- (n2 postag "NN" and deprel "SS") and .--> (v postag "VB")
     ::
     set form n "de";
 }
-
 {
-    n lemma "man" and postag "PN" and <--.(v postag "VB")
+    n lemma "man" and postag "PN" and deprel "SS" and   $-- (n2 postag "NN" and deprel "SS") and <-. (v postag "VB")
+    ::
+    set form n "de";
+}
+{
+    n lemma "sin" and postag "PS" and $-- (pn form "man" and postag "PN")
+    ::
+    set form n "din"; set lemma n "din"; set form pn "du";
+}
+{
+    n form "man" and postag "PN" and <--.(v postag "VB")
     ::
     set form n "du";
 }
 
 {
-    n lemma "man" and postag "PN" and <-. (v2 postag "VB")
+    n form "man" and postag "PN" and <-. (v2 postag "VB")
     ::
     set form n "du";
 }
