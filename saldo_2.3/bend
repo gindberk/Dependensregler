@@ -1,0 +1,15 @@
+class Bend(TreeAction):
+    def __init__(self, what, bend):
+        self.what = what
+        self.bend = bend
+        def apply(self, state):
+            what = self.get_backref(state, self.what)
+            attr = getattr(state.tree, self.attr)
+            lemma = state.tree.lemmas(what)
+            form = state.tree.forms(what)
+            newval = ""
+            with open("nouns.txt") as nouns:
+                for line in nouns:
+                    if lemma in line:
+                        if bend in line:
+                            newval = line[0]
