@@ -1,5 +1,57 @@
 # Passive to active
 
+#Här gör jag så att meningen "Tårtan åts av X" blir "X har ätit Tårtan"
+#detta är dock en fullösning, där postaggen blir upfuckad. För att lösa detta skulle man kunna lägga till en funktion längst ner
+{
+    n postag "NN" and deprel "SS" and <-.(v postag "VB" and deprel "ROOT" and feats "PRT|SFO") and $++ (pp postag "PP" and ->.(agent postag "PM" or postag "PN" or postag "NN" and deprel"PA"))
+    ::
+    conj v sup; set feats v "GGGG"; move node agent before node n; move node v after node agent; delete node pp;
+}
+
+{
+   agent postag "PM"  and <-.(v postag "VB" and feats "GGGG") and $++(n postag "NN" and deprel "SS")
+   ::
+   add "har" after node n;
+}
+{
+   agent postag "NN" and deprel "PA" and <-.(v postag "VB" and feats "GGGG") and $++(n postag "NN" and deprel "SS")
+   ::
+   add "har" after node n;
+}
+
+{
+   agent postag "PN" and deprel "PA" and <-.(v postag "VB" and feats "GGGG") and $++(n postag "NN" and deprel "SS")
+   ::
+   add "har" after node n;
+}
+{
+  agent postag "PM" and <-.(v postag "VB" and feats "GGGG") and $++(n postag "NN" and deprel "SS") and $++(h form "har" and postag "_")
+  ::
+  move node h after node agent;
+}
+
+{
+  agent postag "NN" and deprel "PA" and <-.(v postag "VB" and feats "GGGG") and $++(n postag "NN" and deprel "SS") and $++(h form "har" and postag "_")
+  ::
+  move node h after node agent;
+}
+
+{
+  agent postag "PN" and deprel "PA" and <-.(v postag "VB" and feats "GGGG") and $++(n postag "NN" and deprel "SS") and $++(h form "har" and postag "_")
+  ::
+  move node h after node agent;
+}
+
+######################################################################################################################
+#######Här skulle jag vilja kunna skriv aom passiv dåtid till aktiv dåtid med ett adjektiv inblandat. Ex "Den fina tårtan åts av .
+{
+    n postag "NN" and deprel "ROOT" and $-(jj postag "JJ" and $-(dt postag "DT")) and ->. (v postag "VB"  and feats "PRT|SFO") and $++ (pp postag "PP" and ->.(agent postag "PM" or postag "PN"))
+    ::
+    conj v sup; set postag v "GGGG"; set feats v "GGGG"; move node agent before node dt; move node v after node agent; delete node pp;
+}
+
+
+
 
 #Här vill jag göra det möjligt att skriva om en mening i formen "maten blir äten av x" till "x äter maten"
 #Fungerar enbart på meningar med den specifika syntaxen, ska försöka lösa detta
@@ -8,11 +60,26 @@
     ::
     conj pc pres; move node pc before node n; move node pm before node n; delete node pm; delete node pp;
 }
+#Denna del hanterar när en passiv handling utförs av en entitet, ej en person.
+{
+    n postag "NN" and deprel "SS" and <-. (v postag "VB" and ->.(v2 postag "VB" and $+ (pp postag "PP" and $++(n2 postag "NN")))) and $++(pm postag "PM") and $++(p postag "MAD")
+    ::
+    conj v2 pres; move node v2 before node v; move node v before node p; delete node v2;
+}
+
+
+
+#{move group n2 after node n; delete node n2; delete node pp;
+#    v postag "VB" and deprel "ROOT" and feats "AKT" and $+ (n postag "NN") and $-(pm postag "PM")
+#    ::
+#    set form v "HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEJ";
+#
+#}
 
 #Här vill jag göra det möjligt att skriva om en mening i formen : "Den magnifika tårtan äts av X" till "X äter den magnifika tårtan"
 
 {
-    n postag "NN" and deprel "ROOT" and ->.(v postag "VB"  and ->.(pp postag "PP")) and $++(name postag "PN" or postag "PM") and $--(dt postag "DT" and not $-(x) )
+    n postag "NN" and deprel "ROOT" and ->.(v postag "VB" and ->.(pp postag "PP")) and $++(name postag "PN" or postag "PM") and $--(dt postag "DT" and not $-(x) )
     ::
     move node name before node dt; move node pp after node dt; delete node name;
 }
@@ -85,11 +152,7 @@
     conj v pret; set feats v "PRT|AKTX"; add "man" after node v;
 }
 
-{
-    v feats "PRT|SFO" and > (pn postag "PN" or postag "PM")
-    ::
-    conj v pret; set feats v "PRT|AKTX";
-}
+
 
 {
     v feats /sfo/gi and not > (pn postag "PN" or postag "PM") and $- (o form "och" and .<-- (v2 postag "VB"))
@@ -118,7 +181,6 @@
     conj v pres; set feats v "PRS|AKTX";
 }
 
-
 {
     v feats /x/gi and $-- (man form "man" and postag "_") and $-- (ha postag "HA") and .-> (v2 postag "VB")
     ::
@@ -137,12 +199,12 @@
     set form fs "man";
 }
 
-#här flyttas man:et till efter "kan". kommenterar ut denna då den verkar förstöra
-#{
-#    v feats /x/gi and -->. (man form "man" and postag "_") and .--> (v2 postag "VB")
-#    ::
-#    move node man after node v2;
-#}
+#här flyttas man:et till efter "kan". DENNA ÄR INKOMMENTERAD IGEN, KOLLA SÅ ATT DEN INTE FUCKAR UPP
+{
+    v feats /x/gi and -->. (man form "man" and postag "_") and .--> (v2 postag "VB")
+    ::
+    move node man after node v2;
+}
 
 #flyttar man:et efter det första ordet om det första ordets postag = "HA"
 {
@@ -170,6 +232,8 @@
     ::
     move node man after node v;
 }
+
+
 # Här går en mening från formen "X förväntas höja rentan i slutet av året" till "man förväntar sig att X höjer rentan i slutet av året"
 {
     n postag "NN" and <-.(v postag "VB"and -->.(man form "man") and $+(v2 postag "VB"))
@@ -178,15 +242,12 @@
 }
 
 {
-    v  postag "VB" and deprel "ROOT" and $+ (n postag "NN" and deprel "SS") and $++(man form "man")
+    v  postag "VB" and deprel "ROOT" and $+ (n postag "NN" and deprel "SS" and $+ (vb postag "VB" and $+(n2 postag "NN" and deprel "OO"))) and $++(man form "man")
     ::
     move node man before node v; add "sig" before node n; add "att" after node n;
 
 }
-{
-    v  postag "VB" and deprel "ROOT" and $+ (n postag "NN" and deprel "SS") and $-(man form "man")
-    ::
-}
+
 
 {   s form "sig" and postag "_" and $+ (a form "att" and postag "_")  and $-- v  postag "VB" and deprel "ROOT" and $+ (n postag "NN" and deprel "SS") and $-(man form "man")
     ::
@@ -208,9 +269,9 @@
 #    delete node man;
 #}
 
-#byter plats på ett substantiv och ett verb om substantivet är SS och verbets förälder är en ROOT- funkar ej
+#byter plats på ett substantiv och ett verb om substantivet är SS och verbets förälder är en ROOT
 {
-    n postag "NN" and deprel "SS" and $+(v postag "VB" and .-->(v2 deprel "ROOT"))
+    n postag "NN" and deprel "SS" and $+(v postag "VB" and .-->(v2 postag "VB" and deprel "ROOT"))
     ::
     move node n after node v;
 }
@@ -299,9 +360,34 @@
    conj v pres; move node man before node n; move node v2 after node man;
 }
 
-
-{  
+#Denna fungerar om ett objekt utsätts för mer än en handling av en agent. Ex. "Maten serveras och äts av hungriga människor" till "Hungriga människor serverar och äter maten".
+{
    n postag "NN" and $++(pp postag "PP") and $++(kn postag "KN" and deprel "ROOT" and ->.(v postag "VB") and .<-(v2 postag "VB")) and $++ (man form "man" and postag "_")
    ::
-   conj v pres; move node n after node v; delete node man; move group pp before node n; delete node n; 
+   conj v pres; move node n after node v; delete node man; move group pp before node n; delete node n;
+}
+
+
+#Här vill jag göra så att "Tårtan bakades av Edward Blom" blir till "Edvard Blom bakade tårtan"
+
+{
+    pm postag "PM" and -->.(pm2 postag "PM" and $--(v postag "VB" and deprel "ROOT" and ->.(n postag "NN")))
+    ::
+    move node pm2 after node pm;
+
+}
+
+###Här korrigeras en mening likt "Tårtan och kakorna bakades av Ernst Kirshtager" från "bakade EK tårtan och kakorna" till "Ek bakade tårtan och kakorna"
+{
+  v postag "VB" and deprel "ROOT" and $++ (pm2 postag "PM" and .->(pm postag "PM"and not $-(hp postag "HP"))) and $++ (n postag "NN")
+  ::
+  move node v after node pm2;
+
+}
+#här raderas "Man" om det finns i exempelvis meningen: "Men det avtalet måste man godkännas av...//" dvs. där det inte borde finnas
+{
+    n postag "NN" and deprel "SS" and $+ (v postag "VB" and $+(man form "man" and $++(pm postag "PM" and <-.(n2 postag "NN"))))
+    ::
+    delete node man;
+
 }
