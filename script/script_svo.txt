@@ -10,6 +10,13 @@
     move node ab after node v; move node n before node ab;
 }
 
+#Rätar ut meningsuppbyggnaden om meningen börjar med "AB" följt av ett verb, samt har ett subjekt med en determinerare som ej är närliggande. 
+{
+    ab postag "AB" and <-. (v postag "VB" and  $+(dt deprel "DT") and -->. (n deprel "SS" and not .<-(d deprel "DT") or feats /sub/gi and not .<-(d deprel "DT"))) and not $-(x)
+    ::
+    move node ab after node n; move node ab before node n;
+}
+
 {   ab postag "AB" and <-. (v postag "VB" and -->. (n deprel "SS" and .<-(d deprel "DT") or feats /sub/gi and .<-(d deprel "DT"))) and not $-(x)
     ::
     move node ab after node v; move node d before node ab;
