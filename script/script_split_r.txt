@@ -5,14 +5,20 @@
 
 #kortar ner en mening med två bisatser genom att ta bort dem.
 
+#{
+#    hp postag "HP" and $++ (hp2 postag "HP")
+#    ::
+#    delete group hp;
+#
+#}
+
+
 {
-    hp postag "HP" and $++ (hp2 postag "HP")
+    k form "," and $++(k2 form "," and $-(v postag "VB" and .-->(kn postag "KN")))
     ::
-    delete group hp;
+    split after node k and before node k2;
 
 }
-
-
 
 #
 #Gör om en man som heter Ove - En man En man heter Ove. Skulle behöva få in en punkt samt göra om man-mannen
@@ -43,28 +49,31 @@
 }
 ###############################################################################
 
-{   hp postag "HP" and $- (n postag "NN" and $- (d postag "DT" and $- (n2 postag "NN"))) and <--. (v postag "VB")
+{   hp postag "HP" and $- (n postag "NN" and $- (d postag "DT" and $- (n2 postag "NN"))) and <--. (v postag "VB" )
     ::
     split before node d and after group v;
 }
 
 
-{   hp postag "HP" and <--. (v postag "VB") and $- (n postag "NN") and not $-- (i deprel "IR" and $++ i2 deprel "JR")
+###Följande tre är uppdaterade 2018-07-12##########
+
+{   hp postag "HP" and <--. (v postag "VB") and $- (n postag "NN") and not $-- (i deprel "IR" and $++ i2 deprel "JR") and not $++(kn postag "KN")
     ::
     copy node n after node n;# copy node d after node n;#split before node hp and after group v;# after node n;
 }
 
-{   hp postag "HP" and $- (n postag "NN" and $- (n2 postag "NN")) and <--. (v postag "VB")
+{   hp postag "HP" and $- (n postag "NN" and $- (n2 postag "NN")) and <--. (v postag "VB") and not $++(kn postag "KN")
     ::
     split before node n and after group v;
 }
 
-
-
-{   hp postag "HP" and <--. (v postag "VB") and $- (n postag "NN") and not $-- (i deprel "IR" and $++ i2 deprel "JR")
+{   hp postag "HP" and <--. (v postag "VB") and $- (n postag "NN") and not $-- (i deprel "IR" and $++ i2 deprel "JR") and not $++(kn postag "KN")
     ::
     copy node n after node n;# copy node d after node n;#split before node hp and after group v;# after node n;
 }
+
+
+
 
 {   hp postag "HP" and $- (n postag "NN" and $- (n2 postag "NN")) and <--. (v postag "VB")
     ::
