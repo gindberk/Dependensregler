@@ -1,29 +1,128 @@
 # Quotation Inversion
-#ändrar formen "x, förklarar Pelle" - pelle förklarar att x####################
+# Tar bort eventuella citationstecken
+{   c postag "PAD" and $++ (c2 postag "PAD")
+    ::
+    delete node c;
+}
+{   c postag "PAD"
+    ::
+    delete node c;
+}
+
+
+# titlar före namn
+{   v postag "VB" and $- (k form ",") and $++ (n postag "PM" and $+ (k2 form "," and $+ (i postag "NN"))) and $-- (p form /.*[A-Ö].*/)
+    ::
+    move node i after node v;
+}
+# Rätar ut ordningen till "x sa att" för komplicerade meningar
 {   v postag "VB" and $- (k form ",") and $+ (n postag "PM" and $+ (s form ".")) and $-- (p form /.*[A-Ö].*/)
     ::
-    move node n before node v; add "att" after node v; move group n before node p;
+    add "att" after node v; move node n before node v;
 }
-#ändrar formen x, säger KLas knutsson men fungerar inte än :(
+# Hanterar ovanstående för meningar med prepositioner.
+{   v postag "VB" and $- (k form ",") and $+ (n postag "PM" and $+ (s form ".")) and $-- (p form /.*[A-Ö].*/) and $-- (e postag "NN" and $+ (q postag "PP"))
+    ::
+    add "att" after node v; move node v after node n;
+}
+
+
+##
+#Flyttar "x sa att högst upp" ####uppdaterac 2018-07-12
+{   n postag "PM" and $+ (v postag "VB" and not $+ (p postag "PP")) and $++ (a form "att" and not $+(nn postag "NN")) and $-- (p form /.*[A-Ö].*/) and not $-(s postag "SN")
+    ::
+    move node n before node p; move node a after node p;
+}
+{   v postag "VB" and $- (k form ",") and $+ (d form ".") and $-- (s form /.*[A-Ö].*/)
+    ::
+    move node v after node s;
+}
+
+
+
+
+#Flyttar "x sa att högst upp" för endast titlar
+{   n postag "NN" and $+ (v postag "VB") and $+ (a form "att") and $-- (p form /.*[A-Ö].*/)
+    ::
+    move node n before node p; move node a after node p;
+}
+{   v postag "VB" and $- (k form ",") and $+ (d form ".") and $-- (s form /.*[A-Ö].*/)
+    ::
+    move node v after node s;
+}
+
+# Flyttar "x sa att" längst fram för meningar med för och efternamn ##########Uppdaterad 2018-07-12
 
 {   v postag "VB" and $- (k form ",") and $+ (n postag "PM" and $+ (n2 postag "PM" and $+ (s form "."))) and $-- (p form /.*[A-Ö].*/)
     ::
     move group n before node v; add "att" after node v;
 }
 
+{   n postag "PM" and $+ (n2 postag "PM" and $+ (v postag "VB")) and $++ (a form "att" and not $+ (n3 postag "NN")) and $-- (p form /.*[A-Ö].*/)
+    ::
+    move node n before node p; move node a after node p;
+}
+{   v postag "VB" and $-- (k form ",") and $- (n2 postag "PM") and $-- (s form /.*[A-Ö].*/) and not .--> (h postag "HP")
+    ::
+    move node v after node s;
+}
+{   n postag "PM" and $- (k form ",") and $+ (d form ".") and $-- (s form /.*[A-Ö].*/) and .<--(pm postag "PM")
+    ::
+    move node n after node s;
+}
 
-
-{   k form "," and $+ (x not form /\"/)
+# Rätar ut och FLyttar "x sa att" för meningar med förnamn och titel
+{   v postag "VB" and $- (k form ",") and $+ (n postag "NN" and $+ (n2 postag "PM")) and $-- (s form /.*[A-Ö].*/)
+    ::
+    add "att" after node v; move node n2 before node s;
+}
+{   v postag "VB" and $- (k form ",") and $+ (n postag "NN") and $-- (s form /.*[A-Ö].*/)
+    ::
+    move node v after node s; move node n before node s;
+}
+{ n postag "PM" and $- (n2 postag "NN") and $+ (v postag "VB") and $++ (a form "att" and $- (k form "."))
+  ::
+  move node a after node v;
+}
+# FLyttar "x sa att" för meningar med förnamn, efternamn och titel
+{   v postag "VB" and $- (k form ",") and $+ (n postag "NN" and $+ (n2 postag "PM" and $+ (n3 postag "PM"))) and $-- (s form /.*[A-Ö].*/)
+    ::
+    add "att" after node v; move node n2 before node s;
+}
+{  n postag "NN" and $+ (n2 postag "PM" and $+ (v postag "VB" and $+ (a form "att"))) and $++ (n3 postag "PM" and $++ (p form ".") and $- (k form ","))
+    ::
+    move node n3 after node n2;
+}
+# Kommentar saknas
+{   g postag "VB" and $+ (a postag "AB" and <-.(o deprel "OO"))
+    ::
+    move node a before node g;
+}
+#-----------------------------------------------------------------------------------------------------------------------------------------
+# Hanterar pronomen#####Uppdaterad 2018-07-12
+# Rätar ut ordningen till "x sa att" för Enkla meningar - pronomen
+{   v postag "VB" and not deprel "ROOT" and $- (k form ",") and $++ (pn postag "PN") and $-- (p form /.*[A-Ö].*/)
+    ::
+    move node pn before node v; add "att" after node v;
+}
+#Flyttar "x sa att högst upp"
+{   n postag "PN" and $+ (v postag "VB") and $+ (a form "att") and $-- (p form /.*[A-Ö].*/)
+    ::
+    move node n before node p; move node a after node p;
+}
+{   v postag "VB" and $- (k form ",") and $+ (d form ".") and $-- (s form /.*[A-Ö].*/)
+    ::
+    move node v after node s;
+}
+###############################Uppdaterad 2018-07-12
+# Tar bort restkomman, men ej om det är en uppradning av substantiv. ex. katt, hund eller ko
+{   k form ","  and not $+(kn postag "KN") and not $-(v postag "VB" or  postag "PM" and > (pm3 postag "PM")  or  <--.(kn2 postag "KN")  or -->.(pm2 postag "PM"))
     ::
     delete node k;
 }
 
 
-{   g postag "VB" and $+ (a postag "AB" and <-.(o deprel "OO"))
-    ::
-    move node a before node g;
-}
-##############################################################################
+# Kommentar saknas nedanför
 {
     start postag "PAD" and $++ (stop postag "PAD" and $+ (c deprel "IK" and $+ (v postag "VB" and -->. (a)))) and not $- (x)
     ::
@@ -61,7 +160,7 @@
 }
 
 {
-    p form "." and $+ (x not form /\"/)
+    p form "." and $+ (x not form /\"/) and not $++(p2 form ".")
     ::
-    delete node p;
-}
+delete node p;
+ }

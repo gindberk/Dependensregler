@@ -5,20 +5,64 @@
 #For straight word order, sentences indicating reversed word order were matched. That is, sentences where the first word is an adverb and the second word is a verb.
 
 #PEDAGOGHELVETET
-{   ab postag "AB" and <-. (v postag "VB" and -->. (n deprel "SS" and not .<-(d deprel "DT") or feats /sub/gi and not .<-(d deprel "DT"))) and not $-(x)
+{   ab postag "AB" and <-. (v postag "VB" and not $+(dt deprel "DT") and -->. (n deprel "SS" and not .<-(d deprel "DT") or feats /sub/gi and not .<-(d deprel "DT"))) and not $-(x)
     ::
     move node ab after node v; move node n before node ab;
 }
+####Uppdaterad 2018-07-12 Rätar ut meningsuppbyggnaden om meningen börjar med "AB" följt av ett verb, samt har ett subjekt med en determinerare som ej är närliggande.
+{
+    ab postag "AB" and <-. (v postag "VB" and  $+(dt deprel "DT" and not postag "RG") and -->. (n deprel "SS" and not .<-(d deprel "DT") or feats /sub/gi and not .<-(d deprel "DT"))) and not $-(x)
+    ::
+    move node ab after node n; move node ab before node n;
+}
 
-{   ab postag "AB" and <-. (v postag "VB" and -->. (n deprel "SS" and .<-(d deprel "DT") or feats /sub/gi and .<-(d deprel "DT"))) and not $-(x)
+{   ab postag "AB" and <-. (v postag "VB" and -->. (n deprel "SS" and .<-(d deprel "DT" and not postag "RG") or feats /sub/gi and .<-(d deprel "DT"))) and not $-(x)
     ::
     move node ab after node v; move node d before node ab;
 }
 
 
+#VÄNSTERHÄNT ROLLPERSON  #####Uppdaterad: 2018-07-10
+{ n deprel "SS" and <-. (v postag "VB") and -->. (p postag "PP") and not $++(h postag "HP" and $+(hp2 postag "HP"))
+    ::
+    move node p after node n;
+}
+{ n deprel "SS" and <--. (v postag "VB") and -->. (p postag "PP" and -->. (n2 deprel "PA" and not $-(n3 postag "NN")))  and not $++(h postag "HP" and $+(hp2 postag "HP"))
+    ::
+    move node n2 after node p;
+}
+{ n deprel "SS" and <--. (v postag "VB") and -->. (p postag "PP" and -->. (n2 deprel "PA" and -->. (j postag "JJ"))) and not $++(h postag "HP" and $+(hp2 postag "HP"))
+    ::
+    move node j after node p;
+}
+{ n deprel "SS" and <--. (v postag "VB") and -->. (p postag "PP" and -->. (n2 deprel "PA" and -->. (m postag "PS"))) and not $++(h postag "HP" and $+(hp2 postag "HP"))
+    ::
+    move node m after node p;
+}
 
 ####KONDITIONSTRÄNING KOMMER IN I BILDEN HÄR
 {   ab postag "AB" and <-. (v postag "VB" and ->. (n deprel "SS" ) and  -->.(x) and .<-(y) and ->.(z)) and not $-(x) and $++(p form ".")
     ::
     move node n before node v; move node ab before node p;
+}
+####Jag associerar emellanåt########uppdaterad 2018-07-12
+{ n postag "PN" and <--. (v postag "VB" and ->. (ab postag "AB") and not $-(ab2 postag "AB"))
+    ::
+    move node v after node n;
+
+}
+{ n postag "PN" and <-. (v postag "VB" and -->. (ab postag "AB"))
+    ::
+    move node ab after node v;
+
+}
+{ n postag "NN" and .<- (j postag "JJ") and -->. (d postag "DT")
+    ::
+    move node d before node j;
+
+}
+#Tar bort "faktiskt"
+{   f form "faktiskt" and .--> (p postag "PP" and -->. (n postag "NN") and .--> (n2 postag "PN")) and not > (x)
+    ::
+    delete node f;
 }

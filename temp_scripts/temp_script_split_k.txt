@@ -1,11 +1,17 @@
-# Split-k
+#Split K
+#Den här funkar dåligt
+#{ k form "," and $+ (c postag "KN" or postag "SN") and $++ (v postag "VB") and $++ (k2 form "," and $-- (v))
+#    ::
+#    set form k2 "."; split after node k and after node k2;# delete node k;
+#}
 
-{ k form "," and $+ (c postag "KN" or postag "SN") and $++ (v postag "VB") and $++ (k2 form "," and $-- (v))
+
+{   k form "," and $+ (c postag "KN" or postag "SN") and not $++ (k2 form ",") and $++ (v postag "VB") and  $++ (p postag "PN")
     ::
-    set form k2 "."; split after node k and after node k2;# delete node k;
+    set form k "."; delete node c;
 }
 
-{   k form "," and $+ (c postag "KN" or postag "SN") and not $++ (k2 form ",") and $++ (v postag "VB")
+{   k form "," and $+ (c postag "KN" or postag "SN") and not $++ (k2 form ",") and not $++ (p postag "PN")
     ::
-    add "." after node c; split after node k; delete node k;
+     delete node c; delete node k;
 }
