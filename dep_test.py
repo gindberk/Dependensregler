@@ -22,7 +22,6 @@ class Auto_Rules:
             else:
                 conll_list.append(temp_str)
                 temp_str = ""
-
         return conll_list
 
     def flatten_tree(self, deep_list):
@@ -38,33 +37,56 @@ class Auto_Rules:
         aprox_equals = False
         if flat_gold == flat_result:
             aprox_equals == True
-
         return aprox_equals
-    def compare_prec(self, list1, list2):
-        "Jamfor rad for rad"
+
+    def create_new_goldlist(self, list1):
+        temp_sent1 = []
+        new_list1 = []
+        for line1 in list1:
+            if line1 != "":
+                temp_sent1.append(line1)
+            else:
+                new_list1.append(temp_sent1)
+                temp_sent1 = []
+        return new_list1
+
+    def create_new_outputlist(self, list2):
+        temp_sent2 =[]
+        new_list2 =[]
+        for line2 in list2:
+            if line2 != "":
+                temp_sent2.append(line2)
+            else:
+                new_list2.append(temp_sent2)
+                temp_sent2 = []
+        return new_list2
+
+    def compare_new_lists(self, new_list1, new_list2):
         errors = []
-        one_list = []
-        two_list = []
-        temp_one = []
-        temp_two = []
-        for one, two in zip(list1, list2):
-            if one == "" and two == "" and temp_one != temp_two:
-                one_list.append(temp_one)
-                temp_one = []
-                two_list.append(temp_two)
-                temp_two = []
-            temp_one.append(one)
-            temp_two.append(two)
-        for one, two in zip(one_list, two_list):
-            simple = ''.join(one)
-            orig = ''.join(two)
-            errors.append((one,two))
-        #for error in errors:
+        gold = []
 
+        for sent1, sent2 in zip(new_list1, new_list2):
+            if len(sent1) != len(sent2):
+                errors.append(sent2)
+                gold.append(sent1)
+            if len(sent1) == len(sent2):
+                for line1, line2 in zip(sent1, sent2):
+                    if line1 != line2:
+                        errors.append(sent2)
+                        gold.append(sent1)
 
+        expected_and_errors = (gold, errors)
+        return expected_and_errors
+
+    def get_all_errors(self, expected_and_errors):
+        errors = expected_and_errors[1]
         return errors
 
-    def user_input(self, error_list, new_simple, gold, original, new_original):
+    def get_all_expected(sefl, expected_and_errors):
+        expected = expected_and_errors[0]
+        return expected
+
+    def user_input(self, error_list, gold_list, new_simple, gold, original, new_original):
         "godkanna forenkling pa ny text, om godkand lagga in i guldstandard"
         if not error_list:
             print("Alla trad ar enligt guldstandard")
@@ -73,11 +95,14 @@ class Auto_Rules:
             print("---------------------------------------------------")
             print("Dessa trad blir felaktiga:")
             print("---------------------------------------------------")
-            for error in error_list:
-                for line in error:
-                    for string in line:
-                        print(string)
-                print("---------------------------------------------------")
+            for erroro, goldo in zip(error_list, gold_list):
+                print("------------------fel-----------------------------------")
+                for errorline in erroro:
+                    print (errorline)
+                print("-----------------facit----------------------------------")
+                for goldline in goldo:
+                    print(goldline)
+
         self.print_seperation()
         print("Old tree:")
         print(new_original)
@@ -163,8 +188,13 @@ class Auto_Rules:
             self.user_input(errors, new_tree, self.gold, self.original,
                             self.new)
         else:
-            errors = self.compare_prec(gold_list, result_list)
-            self.user_input(errors, new_tree, self.gold, self.original,
+            new_gold = self.create_new_goldlist(gold_list)
+            new_output = self.create_new_outputlist(result_list)
+
+            expected = self.compare_new_lists(new_gold, new_output)
+            errors = self.get_all_errors(expected)
+            gold = self.get_all_expected(expected)
+            self.user_input(errors, gold, new_tree, self.gold, self.original,
                             self.new)
 
 
